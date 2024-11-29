@@ -1,0 +1,24 @@
+.home-background {
+  /* background-image: url("./assets/HOME.svg"); */
+  /* background-position: center; */
+  background-color: #d4e8ff;
+  background-size: contain;
+  /* backdrop-filter:initial; */
+
+  /* background-position: center; */
+  background-repeat: no-repeat !important;
+  height: 600vh;
+  width: 100% !important;
+  /* Takes full width */
+  padding-inline: 12%;
+}
+
+/* Add responsive design */
+@media (max-width: 300px) and (min-height: 766px) and (min-width: 2100px) {
+  .home-background {
+    background-size: contain;
+    /* Adjust for smaller screens */
+    height: auto;
+    /* Adjust height based on content */
+  }
+}
