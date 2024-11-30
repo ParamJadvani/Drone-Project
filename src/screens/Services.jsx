@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Services_banner from "../assets/Customer relationship management-bro.png";
 import dc from "../assets/drone-cuate.png";
+import Footer from "../components/Footer/Footer";
 
 const theme = createTheme({
   typography: {
@@ -179,6 +180,7 @@ const Services = () => {
             }
           />
         </Box>
+      <Footer/>
       </Box>
     </ThemeProvider>
   );

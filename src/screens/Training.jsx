@@ -10,6 +10,7 @@ import {
 import Banner from "../components/Banner";
 import cap from "../assets/Course app-pana.png";
 import cb from "../assets/Certification-bro.png";
+import Footer from "../components/Footer/Footer";
 
 // Define the custom theme
 const theme = createTheme({
@@ -120,6 +121,7 @@ const Training = () => {
             }
           />
         </Container>
+      <Footer />
       </Box>
     </ThemeProvider>
   );

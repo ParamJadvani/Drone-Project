@@ -9,6 +9,7 @@ import vsr from "../assets/Vision statement-rafiki.png";
 import pob from "../assets/Progress overview-bro.png";
 import Banner from "../components/Banner";
 import scb from "../assets/Stamp collecting-bro.png";
+import Footer from "../components/Footer/Footer";
 
 // Create a theme with custom font family
 const theme = createTheme({
@@ -131,6 +132,7 @@ const AboutUS = () => {
             description="At Vymanika Aerospace's mission is to advance the aerospace industry with innovative unmanned aerial vehicles (UAVs) and components. We are dedicated to delivering high-performance, reliable solutions that enhance UAV capabilities, meet diverse industry needs, and drive the future of unmanned aviation for a safer, more connected world."
           />
         </Box>
+        <Footer />
       </Box>
     </ThemeProvider>
   );

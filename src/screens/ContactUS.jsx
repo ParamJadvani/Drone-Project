@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import cu from "../assets/Contact us-bro.png";
 import { Phone, Email, LocationOn } from "@mui/icons-material";
+import Footer from "../components/Footer/Footer";
 
 // Create a theme with custom typography
 const theme = createTheme({
@@ -102,6 +103,7 @@ const ContactUS = () => {
             }
           />
         </Box>
+      <Footer/>
       </Box>
     </ThemeProvider>
   );
