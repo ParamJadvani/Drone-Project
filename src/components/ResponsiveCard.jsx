@@ -5,23 +5,25 @@ const ResponsiveCard = ({ image, title, description }) => {
   return (
     <Card
       sx={{
-        maxWidth: 400,
-        margin: "auto",
-        boxShadow: 3,
+        maxWidth: 300,
+        marginInline: "auto",
+        marginBottom: 2,
         borderRadius: 2,
-        backgroundColor: "#f0f4ff",
-        "&:hover": {
-          boxShadow: 6,
-        },
+        backgroundColor: "#E8F4FF", // Light blue background
+        border: "2px solid #2196F3", // Blue border
+        boxShadow: "5px 5px 0px #1565C0", // Shadow effect
+        position: "relative",
       }}
     >
       <Box
         sx={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "start",
           alignItems: "center",
+          marginTop: 6,
           height: 80,
-          backgroundColor: "#ffffff",
+          paddingInline: 2,
+          width: "100%",
         }}
       >
         <CardMedia
@@ -39,14 +41,14 @@ const ResponsiveCard = ({ image, title, description }) => {
         <Typography
           variant="h6"
           component="div"
-          sx={{ fontWeight: "bold", color: "#333333", textAlign: "center" }}
+          sx={{ fontWeight: "bold", color: "#000000", textAlign: "start" }}
         >
           {title}
         </Typography>
         <Typography
           variant="body2"
-          color="text.secondary"
-          sx={{ textAlign: "center", marginTop: 1 }}
+          color="#000000"
+          sx={{ textAlign: "start", marginTop: 1 }}
         >
           {description}
         </Typography>

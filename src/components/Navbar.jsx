@@ -47,7 +47,7 @@ const Navbar = () => {
       sx={{
         backgroundColor: "#172831",
         boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
-        px: "10%",
+        px: { xs: 2, sm: 3, md: 5 }, // Adjust padding for responsiveness
       }}
     >
       <Container maxWidth="xl">
@@ -81,30 +81,15 @@ const Navbar = () => {
                     fontWeight: 500,
                     padding: "5px",
                     borderRadius: "5px",
-                    width: "auto", // Ensures that width adjusts based on content
+                    width: "auto",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      color: theme.palette.secondary.main, // Hover color from theme
+                      backgroundColor: "rgba(96, 165, 250, 0.1)", // Light blue background on hover
+                    },
                   }}
-                  // onMouseEnter={(e) => {
-                  //   // Apply hover effect on the entire box (icon + text)
-                  //   e.target.style.color = "#60A5FA";
-                  //   e.target.style.transform = "scale(1.05)"; // Slight zoom
-                  //   e.target.style.backgroundColor = "rgba(96, 165, 250, 0.1)"; // Light blue background on hover
-                  // }}
-                  // onMouseLeave={(e) => {
-                  //   // Remove hover effect
-                  //   e.target.style.color = "white";
-                  //   e.target.style.transform = "scale(1)";
-                  //   e.target.style.backgroundColor = "transparent"; // Reset background color
-                  // }}
                 >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      fontSize: "0.8rem",
-                    }}
-                  >
-                    {item.icon}
-                  </Box>
+                  {item.icon}
                   {item.label}
                 </Link>
               ))}
@@ -122,7 +107,7 @@ const Navbar = () => {
                 MenuListProps={{ "aria-labelledby": "basic-button" }}
                 sx={{
                   "& .MuiMenu-paper": {
-                    backgroundColor: "#172831",
+                    backgroundColor: theme.palette.primary.main, // Use primary color from theme
                     borderRadius: "8px",
                   },
                   "& .MuiMenuItem-root": {
@@ -130,7 +115,7 @@ const Navbar = () => {
                     fontSize: "0.9rem",
                     "&:hover": {
                       backgroundColor: "rgba(96, 165, 250, 0.1)",
-                      color: "#60A5FA",
+                      color: theme.palette.secondary.main, // Hover color from theme
                     },
                   },
                 }}

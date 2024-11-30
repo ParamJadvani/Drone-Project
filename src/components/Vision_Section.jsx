@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const VisionSection = ({
   vectorImage,
@@ -8,24 +9,29 @@ const VisionSection = ({
   backgroundimage,
   reverse = false,
 }) => {
+  const theme = useTheme(); // Access the theme from MUI
+
   return (
     <Box
       sx={{
+        display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: "2rem",
-        padding: "2rem",
+        gap: 2, // Using theme spacing system
+        p: { xs: 2, sm: 3, lg: 4 }, // Responsive padding based on screen size
         minHeight: "70vh",
-        backgroundColor: "#D4E8FF",
       }}
     >
       {/* Title */}
       <Typography
-        variant="h3"
+        variant="h4"
         sx={{
           textAlign: "center",
           color: "#0047AE",
-          fontWeight: 600,
+          fontWeight: 900,
+          fontStyle: "capitalize",
+          fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" }, // Adjust title size for different screen sizes
         }}
       >
         {title}
@@ -38,7 +44,7 @@ const VisionSection = ({
           flexDirection: { xs: "column", lg: reverse ? "row-reverse" : "row" },
           alignItems: "center",
           justifyContent: "space-between",
-          gap: { lg: "2rem" },
+          gap: { lg: 2 }, // Using theme spacing for gaps
           width: "100%",
         }}
       >
@@ -95,14 +101,14 @@ const VisionSection = ({
               padding: "1.5rem",
               borderRadius: "8px",
               textAlign: "justify",
-              color: "black",
+              color: theme.palette.text.primary, // Use the theme text color
               maxWidth: "90%",
             }}
           >
             <Typography
               variant="body1"
               sx={{
-                fontSize: { xs: "0.9rem", sm: "1rem" }, // Font size responsive
+                fontSize: { xs: "0.9rem", sm: "1rem" }, // Responsive font size
                 fontWeight: 500,
                 lineHeight: 1.5,
               }}

@@ -1,13 +1,14 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 const Banner = ({ image, contentDiv, title = null, reverse = false }) => {
+  const theme = useTheme(); // Access theme for consistent styling
   return (
     <Box
       sx={{
-        gap: { sm: 4, md: 6, lg: 8 }, // Responsive gap between content and image
-        padding: { sm: 2, md: 4, lg: 6, xl: 8 }, // Responsive padding
-        minHeight: { sm: "auto", md: "70vh", lg: "80vh" }, // Minimum height adjustments for responsiveness
+        gap: theme.spacing(4), // Responsive gap
+        padding: theme.spacing(3, 2), // Top-bottom and left-right padding
+        minHeight: { sm: "auto", md: "70vh", lg: "80vh" }, // Responsive minimum height
       }}
     >
       {/* Title Section */}
@@ -15,11 +16,11 @@ const Banner = ({ image, contentDiv, title = null, reverse = false }) => {
         <Typography
           variant="h4"
           sx={{
-            fontWeight: 700, // Bold font weight
-            color: "#0047AE", // Title color
-            textAlign: { sm: "center" }, // Center title on small screens, left-align on larger screens
-            marginBottom: { sm: 2, md: 3, lg: 4 }, // Adjust margin for title
-            fontSize: { sm: "1.5rem", md: "2rem", lg: "2.5rem" }, // Responsive font size
+            fontWeight: 900, // Use theme-defined font weight
+            color: "#0047AE", // Title color from theme
+            textAlign: { sm: "center" }, // Center on small screens
+            marginBottom: theme.spacing(4), // Theme-based margin
+            fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" }, // Smaller font on xs and sm
           }}
         >
           {title}
@@ -30,43 +31,42 @@ const Banner = ({ image, contentDiv, title = null, reverse = false }) => {
         sx={{
           display: "flex",
           flexDirection: {
-            sm: "column-reverse", // Ensure image is always on top for medium screens and smaller
-            lg: reverse ? "row-reverse" : "row", // Reverse content for larger screens
+            xs: "column", // Reverse order on extra small screens (image first)
+            sm: "column", // Same behavior for small screens
+            lg: reverse ? "row-reverse" : "row", // Reverse layout on large screens if specified
           },
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        {/* Content Section */}
-        <Box
-          sx={{
-            width: "100%",
-            lg: { width: "50%" },
-            paddingX: { sm: 2, md: 4 },
-          }}
-        >
-          {contentDiv}
-        </Box>
-
         {/* Image Section */}
         <Box
           sx={{
-            width: "100%",
-            lg: { width: "50%" },
+            width: { xs: "100%", lg: "50%" }, // Full width on smaller screens, half on larger screens
             display: "flex",
             justifyContent: "center",
-            paddingY: { sm: 2, md: 4, lg: 0 }, // Adjust vertical padding based on screen size
+            paddingY: theme.spacing(4), // Vertical padding for spacing
           }}
         >
           <img
             src={image}
-            alt="Banner Image"
+            alt="Banner"
             style={{
               maxWidth: "100%",
-              objectFit: "contain", // Ensures the image scales without distortion
+              objectFit: "contain", // Scale the image proportionally
               height: "auto",
             }}
           />
+        </Box>
+
+        {/* Content Section */}
+        <Box
+          sx={{
+            width: { xs: "100%", lg: "50%" }, // Full width on smaller screens, half on larger screens
+            paddingX: theme.spacing(4), // Horizontal padding
+          }}
+        >
+          {contentDiv}
         </Box>
       </Box>
     </Box>

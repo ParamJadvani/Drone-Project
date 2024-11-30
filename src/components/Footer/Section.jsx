@@ -1,7 +1,9 @@
 import React from "react";
-import { Box, Typography, Divider } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 
 const Section = ({ title, content, isContact }) => {
+  const theme = useTheme(); // Access theme for consistent styling
+
   return (
     <Box
       sx={{
@@ -13,8 +15,8 @@ const Section = ({ title, content, isContact }) => {
       <Typography
         variant="h5"
         sx={{
-          color: "white",
-          fontWeight: 600,
+          color: theme.palette.common.white, // Use theme's white color
+          fontWeight: 900,
           textAlign: "left",
           fontSize: { xs: "19px", sm: "21px", md: "23px" },
           mb: 2,
@@ -26,17 +28,17 @@ const Section = ({ title, content, isContact }) => {
       {/* Content */}
       <Box
         sx={{
-          color: "white",
+          color: theme.palette.common.white, // Use theme's white color
           textAlign: "left",
           fontSize: { xs: "14px", sm: "16px" },
           "& p": {
             marginBottom: 1,
           },
           "& a": {
-            color: "white",
+            color: theme.palette.common.white, // Use theme's white color
             textDecoration: "none",
             "&:hover": {
-              color: "#D4E8FF",
+              color: theme.palette.secondary.main, // Hover color from theme
               textDecoration: "underline",
             },
           },
@@ -58,7 +60,9 @@ const Section = ({ title, content, isContact }) => {
                     fontSize: { xs: "20px", sm: "24px" }, // Icon size
                   },
                   "&:hover": {
-                    color: "#D4E8FF", // Text color change on hover
+                    color: theme.palette.secondary.main, // Hover color from theme
+                    cursor: "pointer",
+                    textDecoration: "underline",
                   },
                   letterSpacing: 1.2,
                 }}
