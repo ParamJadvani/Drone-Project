@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import droneImage from "../assets/OUR-MISSION-VECTOR.png"; // Replace with your image path
+import droneImage from "../assets/SectionImage/Business Plan-bro.png"; // Replace with your image path
 
 const VisionComponent = () => {
   return (

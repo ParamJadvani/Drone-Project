@@ -3,8 +3,8 @@ import { Box, Typography, Grid } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
-import Services_banner from "../assets/Customer relationship management-bro.png";
-import dc from "../assets/drone-cuate.png";
+import Services_banner from "../assets/BannerImage/Service.png";
+import dc from "../assets/SectionImage/drone-cuate.png";
 import Footer from "../components/Footer/Footer";
 
 const theme = createTheme({
@@ -180,7 +180,7 @@ const Services = () => {
             }
           />
         </Box>
-      <Footer/>
+        <Footer />
       </Box>
     </ThemeProvider>
   );

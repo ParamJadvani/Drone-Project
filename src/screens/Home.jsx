@@ -8,12 +8,13 @@ import {
 } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Vision_Section from "../components/Vision_Section";
-import OMV from "../assets/OUR-MISSION-VECTOR.png";
-import jadu from "../assets/jadu.png";
+import OMV from "../assets/SectionImage/Business Plan-bro.png";
+import jadu from "../assets/Vector.png";
 import Banner from "../components/Banner";
-import bannerimage from "../assets/Drone race-bro.png";
-import vsrp from "../assets/Vision statement-rafiki.png";
+import bannerimage from "../assets/BannerImage/Home.png";
+import vsrp from "../assets/SectionImage/Vision statement-rafiki.png";
 import Footer from "../components/Footer/Footer";
+import ResponsiveCard from "../components/ResponsiveCard";
 
 // Create a theme with custom font family
 const theme = createTheme({
@@ -133,7 +134,10 @@ const Home = () => {
           description="Vymanika Aerospace envisions a future where unmanned aerial vehicles seamlessly enhance industries and daily life. We aim to lead in UAV innovation, setting new standards and unlocking transformative possibilities in aerospace technology. Our goal is to create a more efficient, connected world through advanced unmanned aviation solutions."
           reverse={true}
         />
-      <Footer />
+
+        <ResponsiveCard />
+
+        <Footer />
       </Box>
     </ThemeProvider>
   );

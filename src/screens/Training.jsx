@@ -8,8 +8,8 @@ import {
   createTheme,
 } from "@mui/material";
 import Banner from "../components/Banner";
-import cap from "../assets/Course app-pana.png";
-import cb from "../assets/Certification-bro.png";
+import cap from "../assets/BannerImage/Training.png";
+import cb from "../assets/SectionImage/Certification-bro.png";
 import Footer from "../components/Footer/Footer";
 
 // Define the custom theme
@@ -121,7 +121,7 @@ const Training = () => {
             }
           />
         </Container>
-      <Footer />
+        <Footer />
       </Box>
     </ThemeProvider>
   );

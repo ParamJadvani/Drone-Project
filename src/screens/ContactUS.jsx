@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
-import cu from "../assets/Contact us-bro.png";
+import cu from "../assets/BannerImage/Contactus.png";
 import { Phone, Email, LocationOn } from "@mui/icons-material";
 import Footer from "../components/Footer/Footer";
 
@@ -103,7 +103,7 @@ const ContactUS = () => {
             }
           />
         </Box>
-      <Footer/>
+        <Footer />
       </Box>
     </ThemeProvider>
   );

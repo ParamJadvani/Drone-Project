@@ -2,13 +2,13 @@ import React from "react";
 import { Box, Typography, createTheme, ThemeProvider } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Vision_Section from "../components/Vision_Section";
-import AboutUs_Banner from "../assets/About us page-pana.png";
-import jadu from "../assets/jadu.png";
-import OMV from "../assets/OUR-MISSION-VECTOR.png";
-import vsr from "../assets/Vision statement-rafiki.png";
-import pob from "../assets/Progress overview-bro.png";
+import AboutUs_Banner from "../assets/BannerImage/Aboutus.png";
+import jadu from "../assets/Vector.png";
+import OMV from "../assets/SectionImage/Business Plan-bro.png";
+import vsr from "../assets/SectionImage/Vision statement-rafiki.png";
+import pob from "../assets/SectionImage/Progress overview-bro.png";
 import Banner from "../components/Banner";
-import scb from "../assets/Stamp collecting-bro.png";
+import scb from "../assets/SectionImage/Stamp collecting-bro.png";
 import Footer from "../components/Footer/Footer";
 
 // Create a theme with custom font family
