@@ -114,13 +114,13 @@ const Home = () => {
           sx={{
             fontWeight: 900,
             textAlign: "center",
-            marginBottom: 3,
+            marginBottom: 9,
             color: theme.palette.secondary.main,
           }}
         >
           Our Services
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} mb={10}>
           <Grid item xs={12} sm={6} md={4}>
             <ResponsiveCard
               image={drone_delivery}

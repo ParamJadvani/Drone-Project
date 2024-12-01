@@ -19,7 +19,7 @@ const Banner = ({ image, contentDiv, title = null, reverse = false }) => {
             fontWeight: 900, // Use theme-defined font weight
             color: "#0047AE", // Title color from theme
             textAlign: { sm: "center" }, // Center on small screens
-            marginBottom: theme.spacing(4), // Theme-based margin
+            marginBottom: theme.spacing(1), // Theme-based margin
             fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" }, // Smaller font on xs and sm
           }}
         >

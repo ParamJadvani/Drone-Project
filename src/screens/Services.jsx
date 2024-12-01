@@ -5,6 +5,66 @@ import Banner from "../components/Banner";
 import Services_banner from "../assets/BannerImage/Service.png";
 import dc from "../assets/SectionImage/drone-cuate.png";
 import Footer from "../components/Footer/Footer";
+import ResponsiveCard from "../components/ResponsiveCard";
+import drone_delivery from "../assets/CardImage/drone-delivery.png";
+import support from "../assets/CardImage/support.png";
+import drone from "../assets/CardImage/drone.png";
+import pilot from "../assets/CardImage/pilot.png";
+import solar_energy from "../assets/CardImage/solar-energy.png";
+import electric_factory from "../assets/CardImage/electric-factory.png";
+import renewable_energy from "../assets/CardImage/renewable-energy.png";
+import racing_game from "../assets/CardImage/racing-game.png";
+
+const servicesData = [
+  {
+    title: "Agriculture Spraying",
+    description:
+      "Achieve precise crop spraying with our UAVs, improving yield and reducing waste.",
+    icon: drone,
+  },
+  {
+    title: "Surveying & Mapping",
+    description:
+      "Obtain accurate terrain data and maps for construction, agriculture, and urban planning.",
+    icon: support,
+  },
+  {
+    title: "Photography & Videography",
+    description:
+      "Capture breathtaking aerial visuals for events, films, or real estate promotions.",
+    icon: pilot,
+  },
+  {
+    title: "Solar Panel Cleaning & Inspection",
+    description:
+      "Maintain energy efficiency with drones equipped for thorough solar panel cleaning and diagnostics.",
+    icon: solar_energy,
+  },
+  {
+    title: "Powerline Inspection",
+    description:
+      "Ensure uninterrupted power supply with detailed inspections of powerlines, detecting faults efficiently.",
+    icon: electric_factory,
+  },
+  {
+    title: "Wind Turbine Inspection",
+    description:
+      "Perform safe, high-precision turbine inspections, reducing downtime and risks.",
+    icon: renewable_energy,
+  },
+  {
+    title: "Highway Monitoring & Traffic Management",
+    description:
+      "Monitor traffic and road conditions for improved management and safety.",
+    icon: racing_game,
+  },
+  {
+    title: "Drone Shows",
+    description:
+      "Create mesmerizing aerial displays for events, showcasing creativity through synchronized drone performances.",
+    icon: drone_delivery,
+  },
+];
 
 const Services = () => {
   // Access the theme with useTheme
@@ -63,6 +123,47 @@ const Services = () => {
             </Box>
           }
         />
+
+        {/* Responsive Cards in Grid */}
+        <Box sx={{ padding: 2 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 900,
+              textAlign: "center",
+              marginBottom: 9,
+              color: theme.palette.secondary.main,
+            }}
+          >
+            Our Services
+          </Typography>
+
+          <Grid
+            container
+            spacing={3}
+            mb={10}
+            sx={{
+              justifyContent:
+                servicesData.length % 3 === 1 || servicesData.length % 3 === 2
+                  ? "center"
+                  : "flex-start",
+            }}
+          >
+            {servicesData.map(
+              ({ icon, title: t_text, description: d_text }, index) => (
+                <Grid item xs={12} sm={6} md={4} key={index} sx={{
+                  marginInline:{lg:-4 ,md:-1}
+                }}>
+                  <ResponsiveCard
+                    image={icon}
+                    title={t_text}
+                    description={d_text}
+                  />
+                </Grid>
+              )
+            )}
+          </Grid>
+        </Box>
 
         {/* Service Category Banner */}
         <Banner

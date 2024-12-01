@@ -31,6 +31,7 @@ const VisionSection = ({
           color: "#0047AE",
           fontWeight: 900,
           fontStyle: "capitalize",
+          marginBottom: theme.spacing(5),
           fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" }, // Adjust title size for different screen sizes
         }}
       >
