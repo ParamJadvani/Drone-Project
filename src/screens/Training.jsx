@@ -59,7 +59,7 @@ const Training = () => {
         sx={{
           backgroundColor: theme.palette.background.default,
           minHeight: "100vh",
-          paddingInline: { lg: "100px", md: "50px", xs: "0px" }, // Add 150px padding inline (left and right)
+          paddingInline: { lg: "50px", md: "25px", xs: "0px" }, // Add 150px padding inline (left and right)
         }}
       >
         <Container sx={{ paddingTop: { xs: 4, sm: 6 }, paddingBottom: 6 }}>
@@ -150,7 +150,7 @@ const Training = () => {
                       description={d_text}
                       b_height={355} // Set the height and width to be the same
                       t_height={90} // Adjust title height if needed
-                      wordNumber={14}
+                      wordNumber={13}
                     />
                   </Grid>
                 )

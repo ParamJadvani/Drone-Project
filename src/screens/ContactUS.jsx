@@ -12,9 +12,20 @@ const ContactUS = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ backgroundColor: theme.palette.background.default }}>
+    <Box
+      sx={{
+        backgroundColor: theme.palette.background.default,
+      }}
+    >
       <Navbar />
-      <Box>
+
+      <Box
+        sx={{
+          backgroundColor: theme.palette.background.default,
+          minHeight: "100vh",
+          paddingInline: { lg: "50px", md: "25px", xs: "0px" },
+        }}
+      >
         <Banner
           image={cu}
           contentDiv={
@@ -22,7 +33,7 @@ const ContactUS = () => {
               {/* Title Section */}
               <Typography
                 variant="h2"
-                sx={{ marginBottom: 3, color: "#0047AE",fontWeight: "900" }}
+                sx={{ marginBottom: 3, color: "#0047AE", fontWeight: "900" }}
               >
                 CONTACT US
               </Typography>

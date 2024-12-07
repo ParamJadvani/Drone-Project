@@ -176,6 +176,7 @@ const Services = () => {
                       image={icon}
                       title={t_text}
                       description={d_text}
+                      marginb={true}
                     />
                   </Grid>
                 )

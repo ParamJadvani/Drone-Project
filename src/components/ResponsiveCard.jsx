@@ -20,6 +20,7 @@ const ResponsiveCard = ({
   b_height = 330, // Default card height
   t_height = 40, // Default title height
   wordNumber = 20,
+  marginb = false,
 }) => {
   const [open, setOpen] = useState(false);
 
@@ -91,6 +92,8 @@ const ResponsiveCard = ({
             flexGrow: 1,
             display: "flex",
             flexDirection: "column",
+            alignitems: "center",
+            justifyContent: "sapce-between",
             overflow: "hidden",
             paddingBottom: 2,
           }}
@@ -109,6 +112,7 @@ const ResponsiveCard = ({
                 md: t_height, // Default title height for larger screens
                 lg: t_height + 5, // Slightly increase title height for extra-large screens
               },
+              marginBottom: marginb ? { md: 2, lg: 0 } : "0",
             }}
           >
             {title}
@@ -117,8 +121,12 @@ const ResponsiveCard = ({
           <Box
             sx={{
               overflowY: "auto",
-              maxHeight: { lg: 120, md: 85 },
-              paddingRight: 1,
+              maxHeight: { lg: 120, xs: 85, sm: 100 },
+              height: {
+                xs: 85,
+                md: 120,
+                sm: 100,
+              },
             }}
           >
             <Typography
