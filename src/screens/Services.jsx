@@ -81,7 +81,7 @@ const Services = () => {
         sx={{
           backgroundColor: theme.palette.background.default,
           minHeight: "100vh",
-          paddingInline: { lg: "100px", md: "50px", xs: "0px" },
+          paddingInline: { lg: "50px", md: "25px", xs: "0px" },
         }}
       >
         <Box sx={{ padding: { xs: 2, sm: 4 } }}>

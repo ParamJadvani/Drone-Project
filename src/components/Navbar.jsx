@@ -11,7 +11,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import { Menu as MenuIcon, Home, Info, Build, School, Email, Book } from "@mui/icons-material";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useState } from "react";
 import logo from "../assets/LOGO.png";
 
@@ -51,7 +51,6 @@ const Navbar = () => {
 
   return (
     <AppBar
-      position="sticky"
       sx={{
         backgroundColor: "#17231",
         boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",

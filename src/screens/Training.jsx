@@ -148,7 +148,7 @@ const Training = () => {
                       image={icon}
                       title={t_text}
                       description={d_text}
-                      b_height={325} // Set the height and width to be the same
+                      b_height={355} // Set the height and width to be the same
                       t_height={90} // Adjust title height if needed
                     />
                   </Grid>
