@@ -54,93 +54,93 @@ const Navbar = () => {
       sx={{
         backgroundColor: "#17231",
         boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
-        px: { xs: 2, sm: 3, md: 5 }, // Adjust padding for responsiveness
+        px: { xs: 2, sm: 3, md: 5 },
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          {/* Logo */}
-          <Link
-            to="/"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              textDecoration: "none",
-            }}
-          >
-            <img src={logo} alt="Logo" style={{ height: "40px" }} />
-          </Link>
+        <motion.div initial="hidden" animate="visible" variants={navVariants}>
+          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+            {/* Logo */}
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <motion.img
+                src={logo}
+                alt="Logo"
+                style={{ height: "40px" }}
+                whileHover={{ scale: 1.2, rotate: 15 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+            </Link>
 
-          {/* Desktop Menu */}
-          {matches ? (
-            <Box sx={{ display: "flex", gap: 3 }}>
-              {menuItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.to}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    color: "white",
-                    textDecoration: "none",
-                    gap: "0.5rem",
-                    fontSize: "0.8rem",
-                    fontWeight: 500,
-                    padding: "5px",
-                    borderRadius: "5px",
-                    width: "auto",
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      color: theme.palette.secondary.main, // Hover color from theme
-                      backgroundColor: "rgba(96, 165, 250, 0.1)", // Light blue background on hover
+            {/* Desktop Menu */}
+            {matches ? (
+              <Box sx={{ display: "flex", gap: 3 }}>
+                {menuItems.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={menuItemVariants}
+                    whileHover={hoverEffect}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.5rem",
+                      color: "white",
+                      textDecoration: "none",
+                      fontSize: "0.8rem",
+                      fontWeight: 500,
+                      padding: "5px",
+                      borderRadius: "5px",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {item.icon}
+                    <Link
+                      to={item.to}
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </Box>
+            ) : (
+              // Mobile Menu
+              <>
+                <IconButton sx={{ color: "white" }} onClick={handleMenuClick}>
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleMenuClose}
+                  MenuListProps={{ "aria-labelledby": "basic-button" }}
+                  sx={{
+                    "& .MuiMenu-paper": {
+                      backgroundColor: theme.palette.primary.main,
+                      borderRadius: "8px",
                     },
                   }}
                 >
-                  {item.icon}
-                  {item.label}
-                </Link>
-              ))}
-            </Box>
-          ) : (
-            // Mobile Menu
-            <div>
-              <IconButton sx={{ color: "white" }} onClick={handleMenuClick}>
-                <MenuIcon />
-              </IconButton>
-              <Menu
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleMenuClose}
-                MenuListProps={{ "aria-labelledby": "basic-button" }}
-                sx={{
-                  "& .MuiMenu-paper": {
-                    backgroundColor: theme.palette.primary.main, // Use primary color from theme
-                    borderRadius: "8px",
-                  },
-                  "& .MuiMenuItem-root": {
-                    color: "white",
-                    fontSize: "0.9rem",
-                    "&:hover": {
-                      backgroundColor: "rgba(96, 165, 250, 0.1)",
-                      color: theme.palette.secondary.main, // Hover color from theme
-                    },
-                  },
-                }}
-              >
-                {menuItems.map((item, index) => (
-                  <MenuItem
-                    key={index}
-                    onClick={handleMenuClose}
-                    component={Link}
-                    to={item.to}
-                  >
-                    {item.label}
-                  </MenuItem>
-                ))}
-              </Menu>
-            </div>
-          )}
-        </Toolbar>
+                  {menuItems.map((item, index) => (
+                    <MenuItem
+                      key={index}
+                      onClick={handleMenuClose}
+                      component={Link}
+                      to={item.to}
+                    >
+                      <motion.div
+                        initial={{ x: -30, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: index * 0.1, duration: 0.3 }}
+                      >
+                        {item.icon} {item.label}
+                      </motion.div>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </>
+            )}
+          </Toolbar>
+        </motion.div>
       </Container>
     </AppBar>
   );
