@@ -23,7 +23,7 @@ const ResponsiveCard = ({
 }) => {
   const [open, setOpen] = useState(false);
 
-  // Function to truncate the description to the first `wordNumber` words
+  // Function to truncate the description to the first wordNumber words
   const truncateText = (text, wordLimit) => {
     const words = text.trim().split(/\s+/); // Split by spaces and trim
     return words.slice(0, wordLimit).join(" ");
@@ -43,9 +43,10 @@ const ResponsiveCard = ({
           maxWidth: 280,
           width: "100%",
           marginInline: "auto",
-          backgroundColor: "#E8F4FF",
-          border: "2px solid #2196F3",
-          boxShadow: "5px 5px 0px #1565C0",
+          backgroundColor: "transparent",
+          border: "1px solid #000000",
+          boxShadow:
+            "5px 5px 0px  rgba(0, 71, 174,1), -1px 0px 0px rgba(0, 71, 174,1)",
           position: "relative",
           display: "flex",
           flexDirection: "column",
@@ -77,8 +78,8 @@ const ResponsiveCard = ({
             src={image}
             alt={title}
             sx={{
-              height: 40,
-              width: 40,
+              height: 60,
+              width: 60,
               objectFit: "contain",
             }}
           />
