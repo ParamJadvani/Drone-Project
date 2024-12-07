@@ -12,12 +12,12 @@ import {
 } from "@mui/material";
 import {
   Menu as MenuIcon,
-  Home,
-  Info,
-  Build,
-  School,
-  Email,
-  Book,
+  // Home,
+  // Info,
+  // Build,
+  // School,
+  // Email,
+  // Book,
 } from "@mui/icons-material";
 import { motion } from "framer-motion";
 import { useState } from "react";

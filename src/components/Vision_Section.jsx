@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
@@ -95,32 +95,35 @@ const VisionSection = ({
 
           {/* Overlayed Description */}
           <Box
-            sx={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              padding: "1.5rem",
-              borderRadius: "8px",
-              textAlign: "justify",
-              color: theme.palette.text.primary, // Use the theme text color
-              width: "100%", // Take full width of the image
-              maxWidth: "500px",
-              px: { xs: 2, sm: 3, lg: 4 }, // Inline padding for left and right on different screen sizes
-              py: { xs: 10, sm: 20, lg: 25 },
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: { xs: "0.9rem", sm: "1rem" }, // Responsive font size
-                fontWeight: 500,
-                lineHeight: 1.5,
-              }}
-            >
-              {description}
-            </Typography>
-          </Box>
+  sx={{
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    padding: { xs: "1rem", sm: "1.5rem" }, // Responsive padding
+    borderRadius: "8px",
+    textAlign: "justify",
+    color: "text.primary", // Use theme's primary text color
+    width: "90%", // Take most of the screen width on small screens
+    maxWidth: "500px", // Maximum width for larger screens
+    px: { xs: 2, sm: 3, lg: 4 }, // Inline padding on different breakpoints
+    py: { xs: 5, sm: 10, lg: 15 }, // Vertical padding for responsiveness
+    
+  }}
+>
+  <Typography
+    variant="body1"
+    sx={{
+      fontSize: { xs: "0.9rem", sm: "1rem", lg: "1.1rem" }, // Adjust font size based on screen size
+      fontWeight: 500,
+      lineHeight: 1.6, // Increase line height for better readability
+      textAlign: "center", // Center-align text on smaller screens for better readability
+    }}
+  >
+    {description}
+  </Typography>
+</Box>
+
         </Box>
       </Box>
     </Box>
