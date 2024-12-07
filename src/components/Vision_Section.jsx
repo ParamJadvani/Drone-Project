@@ -1,3 +1,4 @@
+// Import necessary MUI components and hooks
 // import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -19,38 +20,39 @@ const VisionSection = ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: 2, // Using theme spacing system
-        p: { xs: 2, sm: 3, lg: 4 }, // Responsive padding based on screen size
+        gap: theme.spacing(2), // Use theme spacing system
+        p: { xs: 2, sm: 3, lg: 4 }, // Responsive padding
         minHeight: "70vh",
+        width: "100%",
       }}
     >
-      {/* Title */}
+      {/* Title Section */}
       <Typography
         variant="h4"
         sx={{
           textAlign: "center",
-          color: "#0047AE",
+          color: "#0047AE", // Custom color
           fontWeight: 900,
           fontStyle: "capitalize",
-          marginBottom: theme.spacing(5),
-          fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" }, // Adjust title size for different screen sizes
+          mb: theme.spacing(5), // Margin bottom using theme
+          fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" },
         }}
       >
         {title}
       </Typography>
 
-      {/* Content Wrapper */}
+      {/* Main Content Wrapper */}
       <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", lg: reverse ? "row-reverse" : "row" },
           alignItems: "center",
           justifyContent: "space-between",
-          gap: { lg: 2 }, // Using theme spacing for gaps
+          gap: { xs: 2, lg: 4 }, // Adjusted gap
           width: "100%",
         }}
       >
-        {/* Left SVG Background (flipped based on reverse prop) */}
+        {/* Left Image Section */}
         <Box
           sx={{
             width: { xs: "100%", lg: "50%" },
@@ -71,7 +73,7 @@ const VisionSection = ({
           />
         </Box>
 
-        {/* Right Image and Description */}
+        {/* Right Section with Background and Description */}
         <Box
           sx={{
             position: "relative",
@@ -82,7 +84,7 @@ const VisionSection = ({
             overflow: "hidden",
           }}
         >
-          {/* Image */}
+          {/* Background Image */}
           <img
             src={backgroundimage}
             alt="Vision Section"
@@ -94,7 +96,7 @@ const VisionSection = ({
             }}
           />
 
-          {/* Overlayed Description */}
+          {/* Overlay Description */}
           <Box
             sx={{
               position: "absolute",
