@@ -1,32 +1,24 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
   IconButton,
-  Menu,
-  MenuItem,
   useMediaQuery,
   useTheme,
   Box,
   Container,
+  Menu,
+  MenuItem,
 } from "@mui/material";
-import {
-  Menu as MenuIcon,
-  Home,
-  Info,
-  Build,
-  School,
-  Email,
-  Book,
-} from "@mui/icons-material";
+import { Menu as MenuIcon, Home, Info, Build, School, Email, Book } from "@mui/icons-material";
+import { motion } from "framer-motion";
+import { useState } from "react";
 import logo from "../assets/LOGO.png";
 
 const Navbar = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("lg"));
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
   const handleMenuClick = (event) => setAnchorEl(event.currentTarget);
@@ -41,37 +33,43 @@ const Navbar = () => {
     { to: "/knowledge", label: "Knowledge", icon: <Book /> },
   ];
 
+  const navVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delayChildren: 0.2, staggerChildren: 0.1 } },
+  };
+
+  const menuItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+  };
+
+  const hoverEffect = {
+    scale: 1.1,
+    boxShadow: "0px 5px 15px rgba(212, 232, 255, 1)",
+    transition: { duration: 0.3 },
+  };
+
   return (
     <AppBar
       position="sticky"
       sx={{
-        backgroundColor: "#172831",
+        backgroundColor: "#17231",
         boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
-        // px: { xs: 2, sm: 3, md: 5 }, // Adjust padding for responsiveness
-        paddingInline: { lg: "100px", md: "50px", xs: "0px" },
-        height: 70,
+        px: { xs: 2, sm: 3, md: 5 }, // Adjust padding for responsiveness
       }}
     >
       <Container maxWidth="xl">
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height: "100%",
-          }}
-        >
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Logo */}
           <Link
             to="/"
             style={{
               display: "flex",
               alignItems: "center",
-              height: "100%",
               textDecoration: "none",
             }}
           >
-            <img src={logo} alt="Logo" style={{ height: "63%" }} />
+            <img src={logo} alt="Logo" style={{ height: "40px" }} />
           </Link>
 
           {/* Desktop Menu */}
@@ -87,12 +85,11 @@ const Navbar = () => {
                     color: "white",
                     textDecoration: "none",
                     gap: "0.5rem",
-                    fontSize: "0.82rem",
+                    fontSize: "0.8rem",
                     fontWeight: 500,
                     padding: "5px",
                     borderRadius: "5px",
                     width: "auto",
-                    height: "100%",
                     transition: "all 0.3s ease",
                     "&:hover": {
                       color: theme.palette.secondary.main, // Hover color from theme
