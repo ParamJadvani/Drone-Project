@@ -15,7 +15,7 @@ import drone from "../assets/CardImage/drone.png";
 
 const Home = () => {
   const theme = useTheme(); // Access theme for consistent colors and typography
-  console.log(theme.palette.secondary.main)
+  console.log(theme.palette.secondary.main);
 
   return (
     <Box

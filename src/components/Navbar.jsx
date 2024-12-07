@@ -10,8 +10,16 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import { Menu as MenuIcon, Home, Info, Build, School, Email, Book } from "@mui/icons-material";
-// import { motion } from "framer-motion";
+import {
+  Menu as MenuIcon,
+  Home,
+  Info,
+  Build,
+  School,
+  Email,
+  Book,
+} from "@mui/icons-material";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import logo from "../assets/LOGO.png";
 
@@ -25,17 +33,21 @@ const Navbar = () => {
   const handleMenuClose = () => setAnchorEl(null);
 
   const menuItems = [
-    { to: "/", label: "Home", icon: <Home /> },
-    { to: "/about", label: "About Us", icon: <Info /> },
-    { to: "/services", label: "Services", icon: <Build /> },
-    { to: "/training", label: "Training", icon: <School /> },
-    { to: "/contact", label: "Contact Us", icon: <Email /> },
-    { to: "/knowledge", label: "Knowledge", icon: <Book /> },
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About Us" },
+    { to: "/services", label: "Services" },
+    { to: "/training", label: "Training" },
+    { to: "/contact", label: "Contact Us" },
+    { to: "/knowledge", label: "Knowledge" },
   ];
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delayChildren: 0.2, staggerChildren: 0.1 } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delayChildren: 0.2, staggerChildren: 0.1 },
+    },
   };
 
   const menuItemVariants = {
@@ -45,7 +57,7 @@ const Navbar = () => {
 
   const hoverEffect = {
     scale: 1.1,
-    boxShadow: "0px 5px 15px rgba(212, 232, 255, 1)",
+    boxShadow: "0px 5px 15px rgba(0, 71, 174, 1)",
     transition: { duration: 0.3 },
   };
 

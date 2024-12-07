@@ -78,6 +78,7 @@ const VisionSection = ({
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            overflow: "hidden",
           }}
         >
           {/* Image */}
@@ -103,7 +104,10 @@ const VisionSection = ({
               borderRadius: "8px",
               textAlign: "justify",
               color: theme.palette.text.primary, // Use the theme text color
-              maxWidth: "90%",
+              width: "100%", // Take full width of the image
+              maxWidth: "500px",
+              px: { xs: 2, sm: 3, lg: 4 }, // Inline padding for left and right on different screen sizes
+              py: { xs: 10, sm: 20, lg: 25 },
             }}
           >
             <Typography
