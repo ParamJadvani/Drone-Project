@@ -19,7 +19,7 @@ const Banner = ({ image, contentDiv, title = null, reverse = false }) => {
           sx={{
             fontWeight: 900, // Use theme-defined font weight
             color: "#0047AE", // Title color from theme
-            textAlign: { sm: "center" }, // Center on small screens
+            textAlign: "center", // Center on small screens
             marginBottom: theme.spacing(1), // Theme-based margin
             fontSize: {
               xs: "1.5rem", // Smaller font size on xs screens
@@ -29,7 +29,7 @@ const Banner = ({ image, contentDiv, title = null, reverse = false }) => {
             },
           }}
         >
-          {title}
+          {title.toUpperCase()}
         </Typography>
       )}
 

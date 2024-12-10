@@ -151,7 +151,8 @@ const Services = () => {
 
             <Grid
               container
-              spacing={3}
+              rowSpacing={3}
+              columnSpacing={20}
               mb={10}
               sx={{
                 justifyContent:
@@ -166,7 +167,8 @@ const Services = () => {
                     item
                     xs={12}
                     sm={6}
-                    md={4}
+                    md={6}
+                    lg={4}
                     key={index}
                     sx={{
                       marginInline: { lg: -4, md: -1 }, // Adjust spacing if necessary

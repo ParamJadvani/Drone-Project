@@ -1,10 +1,21 @@
 import React from "react";
-import { Box, Typography, Button, Grid, useTheme } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  useTheme,
+  TextField,
+  IconButton,
+  Button,
+} from "@mui/material";
+import { IoPaperPlaneOutline } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Vision_Section from "../components/Vision_Section";
 import Banner from "../components/Banner";
 import Footer from "../components/Footer/Footer";
 import ResponsiveCard from "../components/ResponsiveCard";
+import TestimonialCard from "../components/TestimonialCard";
+import onrev from "../assets/SectionImage/Online Review-rafiki.png";
 import OMV from "../assets/SectionImage/Business Plan-bro.png";
 import jadu from "../assets/Vector.png";
 import bannerimage from "../assets/BannerImage/Home.png";
@@ -12,10 +23,56 @@ import vsrp from "../assets/SectionImage/Vision statement-rafiki.png";
 import drone_delivery from "../assets/CardImage/drone-delivery.png";
 import support from "../assets/CardImage/support.png";
 import drone from "../assets/CardImage/drone.png";
+import certificate from "../assets/CardImage/winner.png";
+import mapping from "../assets/CardImage/mapping.png";
+import pilot from "../assets/CardImage/pilot.png";
+
+// Data for "Our Services" Section
+const servicesData = [
+  {
+    image: drone_delivery,
+    title: "Drone Show",
+    description:
+      "Drone Shows are synchronized aerial displays using drones to create visuals, replacing traditional fireworks for entertainment and awareness.",
+  },
+  {
+    image: support,
+    title: "Surveying & Mapping",
+    description:
+      "Drone surveying provides accurate data faster mapping, improved safety, and 3D models, revolutionizing land and construction surveying processes.",
+  },
+  {
+    image: drone,
+    title: "Agriculture Spraying",
+    description:
+      "Agriculture drones ensure efficient crop spraying, reducing pesticide use, improving precision, saving time, and covering larger areas effectively.",
+  },
+];
+
+// Data for "Training & Courses" Section
+const trainingData = [
+  {
+    image: certificate,
+    title: "DGCA Certified Remote Pilot Certificate (RPC)",
+    description:
+      "Get certified by DGCA with hands-on training to become a licensed drone operator. Learn safety protocols, legal requirements, and technical skills to excel in UAV operations.",
+  },
+  {
+    image: pilot,
+    title: "Photography & Videography",
+    description:
+      "Capture breathtaking aerial visuals for events, films, or real estate promotions.",
+  },
+  {
+    image: mapping,
+    title: "Fertilizer/Pesticide Application in Agriculture",
+    description:
+      "Specialized training to use drones for efficient and precise agricultural spraying, ensuring better crop yields and reduced waste.",
+  },
+];
 
 const Home = () => {
-  const theme = useTheme(); // Access theme for consistent colors and typography
-  console.log(theme.palette.secondary.main);
+  const theme = useTheme();
 
   return (
     <Box
@@ -113,7 +170,7 @@ const Home = () => {
           reverse={true}
         />
 
-        {/* Responsive Cards in Grid */}
+        {/* "Our Services" Section */}
         <Box sx={{ padding: 2 }}>
           <Typography
             variant="h4"
@@ -126,29 +183,118 @@ const Home = () => {
           >
             Our Services
           </Typography>
-          <Grid container spacing={3} mb={10}>
-            <Grid item xs={12} sm={6} md={4}>
-              <ResponsiveCard
-                image={drone_delivery}
-                title="Drone Show"
-                description="Drone Shows are synchronized aerial displays using drones to create visuals, replacing traditional firework for entertainment and awareness."
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ResponsiveCard
-                image={support}
-                title="Surveying & Mapping"
-                description="Drone surveying provides accurate data faster mapping, improved safety, and 3D models, revolutionizing land and construction surveying processes."
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} md={4}>
-              <ResponsiveCard
-                image={drone}
-                title="Agriculture Spraying"
-                description="Agriculture drones ensure efficient crop spraying, reducing pesticide use, improving precision, saving time, and covering larger areas effectively."
-              />
-            </Grid>
+          <Grid
+            container
+            rowSpacing={3}
+            columnSpacing={{ lg: 20, md: 10, sm: 10, xs: 1 }}
+            mb={10}
+          >
+            {servicesData.map(({ image, title, description }, index) => (
+              <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
+                <ResponsiveCard
+                  image={image}
+                  title={title}
+                  description={description}
+                />
+              </Grid>
+            ))}
           </Grid>
+        </Box>
+
+        <Banner
+          image={onrev}
+          contentDiv={<TestimonialCard />}
+          title="Client Testimonial"
+        />
+
+        {/* "Training & Courses" Section */}
+        <Box sx={{ padding: 2 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 900,
+              textAlign: "center",
+              marginBottom: 9,
+              color: theme.palette.secondary.main,
+            }}
+          >
+            Training & Courses
+          </Typography>
+          <Grid container spacing={3} mb={10}>
+            {trainingData.map(({ image, title, description }, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <ResponsiveCard
+                  image={image}
+                  title={title}
+                  description={description}
+                />
+              </Grid>
+            ))}
+          </Grid>
+          <Box>
+            <Typography
+              variant="h4"
+              sx={{
+                textAlign: "center",
+                color: "#0047AE", // Custom color
+                fontWeight: 900,
+                fontStyle: "capitalize",
+                mb: theme.spacing(5), // Margin bottom using theme
+                fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" },
+              }}
+            >
+              {"contact us".toUpperCase()}
+            </Typography>
+            <Box
+              sx={{
+                marginInline: "auto",
+                border: "1px solid #000000",
+                boxShadow:
+                  "5px 5px 0px rgba(0, 71, 174, 1), -1px 0px 0px rgba(0, 71, 174, 1)",
+                position: "relative",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                overflow: "hidden",
+                paddingInline: 1.5,
+                maxWidth: 700,
+                width: "100%", // Ensure full width for responsiveness
+                backgroundColor: "white",
+              }}
+            >
+              {/* TextField for input */}
+              <TextField
+                variant="outlined"
+                placeholder="Enter text"
+                fullWidth
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "& fieldset": {
+                      border: "none", // Remove default border to match your style
+                    },
+                    backgroundColor: "white", // White background for input
+                    fontSize: "1rem",
+                  },
+                  input: {
+                    padding: "10px",
+                  },
+                }}
+              />
+
+              {/* Send Icon Button */}
+              <IconButton
+                sx={{
+                  color: "rgba(0, 71, 174, 1)",
+                  borderRadius: "50%",
+                  padding: "10px",
+                  marginLeft: 1,
+                }}
+              >
+                <IoPaperPlaneOutline size={30} />
+              </IconButton>
+            </Box>
+          </Box>
         </Box>
       </Box>
       <Footer />

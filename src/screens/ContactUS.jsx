@@ -53,8 +53,17 @@ const ContactUS = () => {
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                   <Email />
-                  <Typography variant="body1">
-                    Vymanikaaerospace@gmail.com
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      fontSize: { xs: "1rem", sm: "1.2rem" }, // Responsive font size
+                      textAlign: { xs: "center", md: "start" }, // Center for smaller screens
+                      wordBreak: "break-word",
+                    }}
+                  >
+                    Vymanikaaerospace
+                    <wbr />
+                    @gmail.com
                   </Typography>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -67,6 +76,54 @@ const ContactUS = () => {
             </Box>
           }
         />
+
+        <Box
+          height={{ xs: "auto", md: 600 }} // Adjust height for smaller screens
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" }, // Stack in a column for small screens, row for larger screens
+            justifyContent: { xs: "center", md: "space-between" },
+            alignItems: "center",
+            gap: { xs: 2, md: 0 }, // Add space between boxes on smaller screens
+          }}
+        >
+          <Box
+            sx={{
+              marginInline: "auto",
+              border: "1px solid #000000",
+              boxShadow:
+                "5px 5px 0px rgba(0, 71, 174, 1), -1px 0px 0px rgba(0, 71, 174, 1)",
+              position: "relative",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              overflow: "hidden",
+              paddingInline: 1.5,
+              height: { xs: "300px", md: "100%" }, // Adjust height for smaller screens
+              backgroundColor: "transparent",
+              width: { xs: "90%", md: "49%" }, // Full width for small screens, 49% for larger screens
+            }}
+          ></Box>
+          <Box
+            sx={{
+              marginInline: "auto",
+              border: "1px solid #000000",
+              boxShadow:
+                "5px 5px 0px rgba(0, 71, 174, 1), -1px 0px 0px rgba(0, 71, 174, 1)",
+              position: "relative",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              overflow: "hidden",
+              paddingInline: 1.5,
+              height: { xs: "300px", md: "100%" }, // Adjust height for smaller screens
+              backgroundColor: "transparent",
+              width: { xs: "90%", md: "49%" }, // Full width for small screens, 49% for larger screens
+            }}
+          ></Box>
+        </Box>
       </Box>
       <Footer />
     </Box>

@@ -1,48 +1,17 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardMedia,
-  Box,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  IconButton,
-} from "@mui/material";
+import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
-const ResponsiveCard = ({
-  image,
-  title,
-  description,
-  b_height = 330, // Default card height
-  t_height = 40, // Default title height
-  wordNumber = 20,
-  marginb = false,
-}) => {
-  const [open, setOpen] = useState(false);
-
-  // Function to truncate the description to the first wordNumber words
-  const truncateText = (text, wordLimit) => {
-    const words = text.trim().split(/\s+/); // Split by spaces and trim
-    return words.slice(0, wordLimit).join(" ");
-  };
-
-  // Check if the description exceeds the word limit
-  const isDescriptionLong = description.trim().split(/\s+/).length > wordNumber;
-
-  // Open and close the dialog
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+const ResponsiveCard = ({ image, title, description }) => {
   return (
     <>
       <Card
         sx={{
-          maxWidth: 280,
-          width: "100%",
+          maxWidth: {
+            xs: 256,
+            md: 320,
+          },
+          width: 320,
           marginInline: "auto",
           backgroundColor: "transparent",
           border: "1px solid #000000",
@@ -53,13 +22,10 @@ const ResponsiveCard = ({
           flexDirection: "column",
           justifyContent: "flex-start",
           overflow: "hidden",
-          // Responsive height logic
-          height: {
-            xs: b_height - 30, // Decrease height by 30 for small screens
-            sm: b_height - 20, // Decrease height by 20 for medium screens
-            md: b_height, // Default height for larger screens
-            lg: b_height + 10, // Slightly increase height for extra-large screens
-          },
+          maxHeight: 320,
+          height: 320,
+          paddingInline: 1.5,
+          borderRadius: 0,
         }}
       >
         {/* Icon Section */}
@@ -68,8 +34,6 @@ const ResponsiveCard = ({
             display: "flex",
             justifyContent: "start",
             alignItems: "center",
-            height: 80,
-            paddingInline: 2,
             width: "100%",
             marginTop: 6,
           }}
@@ -95,7 +59,8 @@ const ResponsiveCard = ({
             alignitems: "center",
             justifyContent: "sapce-between",
             overflow: "hidden",
-            paddingBottom: 2,
+            marginTop: 1,
+            padding: 0,
           }}
         >
           <Typography
@@ -104,15 +69,13 @@ const ResponsiveCard = ({
               fontWeight: 800,
               color: "#000000",
               textAlign: "start",
-              fontSize: { xs: "0.85rem", sm: "1rem" },
-              // Responsive title height logic
-              height: {
-                xs: t_height - 10, // Decrease title height by 10 for small screens
-                sm: t_height - 5, // Decrease title height by 5 for medium screens
-                md: t_height, // Default title height for larger screens
-                lg: t_height + 5, // Slightly increase title height for extra-large screens
+              fontSize: {
+                xs: "0.85rem",
+                sm: "1rem",
+                md: "0.9rem",
+                lg: "1.1rem",
               },
-              marginBottom: marginb ? { md: 2, lg: 0 } : "0",
+              height: "30%",
             }}
           >
             {title}
@@ -120,13 +83,7 @@ const ResponsiveCard = ({
 
           <Box
             sx={{
-              overflowY: "auto",
-              maxHeight: { lg: 120, xs: 85, sm: 100 },
-              height: {
-                xs: 85,
-                md: 120,
-                sm: 100,
-              },
+              height: "75%",
             }}
           >
             <Typography
@@ -136,87 +93,18 @@ const ResponsiveCard = ({
                 textAlign: "start",
                 marginTop: 1,
                 fontWeight: 500,
-                fontSize: { xs: "0.75rem", sm: "0.9rem" },
+                fontSize: {
+                  xs: "0.9rem",
+                  lg: "1rem",
+                },
+                fontsize: "1rem",
               }}
             >
-              {isDescriptionLong ? (
-                <>
-                  {truncateText(description, wordNumber)}
-                  <span
-                    style={{
-                      cursor: "pointer",
-                      color: "#1565C0",
-                      fontWeight: "bold",
-                      textDecoration: "underline",
-                      marginLeft: "5px",
-                    }}
-                    onClick={handleOpen}
-                  >
-                    More
-                  </span>
-                </>
-              ) : (
-                description
-              )}
+              {description}
             </Typography>
           </Box>
         </CardContent>
       </Card>
-
-      {/* Dialog for full description */}
-      <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "16px",
-            borderBottom: "1px solid #e0e0e0",
-          }}
-        >
-          <DialogTitle
-            sx={{
-              fontWeight: 700,
-              fontSize: "1.25rem",
-              color: "#1565C0",
-            }}
-          >
-            {title}
-          </DialogTitle>
-          <IconButton onClick={handleClose}>
-            <CloseIcon />
-          </IconButton>
-        </Box>
-        <DialogContent>
-          <Typography
-            variant="body1"
-            color="#333333"
-            sx={{
-              marginTop: 2,
-              fontSize: "1rem",
-              lineHeight: 1.6,
-              textAlign: "justify",
-            }}
-          >
-            {description}
-          </Typography>
-        </DialogContent>
-        <DialogActions
-          sx={{
-            justifyContent: "center",
-            padding: "16px",
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "0.85rem",
-              color: "#888888",
-            }}
-          >
-            Close the dialog when you're done reading.
-          </Typography>
-        </DialogActions>
-      </Dialog>
     </>
   );
 };

@@ -20,7 +20,7 @@ const trainingData = [
     icon: certificate,
   },
   {
-    title: "Agriculture Spraying: Fertilizer/Pesticide Application",
+    title: "Fertilizer/Pesticide Application in Agriculture",
     description:
       "Specialized training to use drones for efficient and precise agricultural spraying, ensuring better crop yields and reduced waste.",
     icon: mapping,
@@ -32,9 +32,9 @@ const trainingData = [
     icon: drone_1,
   },
   {
-    title: "Data Processing for Crop Monitoring & Precision Agriculture",
+    title: "Drone Technician",
     description:
-      "Learn how to collect and process drone data to optimize agricultural practices, monitor crop health, and implement precision farming techniques.",
+      "Drone technician training, teaches, fixes, builds, and flying basics. Short courses hands-on tasks, and certification boosts skills fast.",
     icon: samrtFarm,
   },
   {
@@ -148,9 +148,6 @@ const Training = () => {
                       image={icon}
                       title={t_text}
                       description={d_text}
-                      b_height={355} // Set the height and width to be the same
-                      t_height={90} // Adjust title height if needed
-                      wordNumber={13}
                     />
                   </Grid>
                 )

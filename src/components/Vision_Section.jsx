@@ -38,7 +38,7 @@ const VisionSection = ({
           fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" },
         }}
       >
-        {title}
+        {title.toUpperCase()}
       </Typography>
 
       {/* Main Content Wrapper */}
@@ -120,7 +120,7 @@ const VisionSection = ({
                 fontSize: {
                   xs: "0.62rem",
                   sm: "1rem",
-                  lg: "1.1rem",
+                  lg: "1.05rem",
                 },
                 fontWeight: 500,
                 lineHeight: 1.6,
