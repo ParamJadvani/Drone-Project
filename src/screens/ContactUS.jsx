@@ -6,6 +6,7 @@ import cu from "../assets/BannerImage/Contactus.png";
 import { Phone, Email } from "@mui/icons-material";
 import Footer from "../components/Footer/Footer";
 import { FaLocationDot } from "react-icons/fa6";
+import GoogleMapEmbed from "../components/GoogleMapEmbed";
 
 const ContactUS = () => {
   // Use the theme from ThemeProvider
@@ -104,7 +105,9 @@ const ContactUS = () => {
               backgroundColor: "transparent",
               width: { xs: "90%", md: "49%" }, // Full width for small screens, 49% for larger screens
             }}
-          ></Box>
+          >
+            <GoogleMapEmbed/>
+          </Box>
           <Box
             sx={{
               marginInline: "auto",
