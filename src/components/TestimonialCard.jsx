@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Card, CardContent, Typography, Box, IconButton } from "@mui/material";
 import { Star, StarBorder, ArrowBack, ArrowForward } from "@mui/icons-material";
+import { CSSTransition } from "react-transition-group";
+import "../css/TestimonialCard.css"; // Custom CSS for animations
 
 // Random quotes array
 const quotes = [
@@ -33,15 +35,27 @@ const quotes = [
 
 const TestimonialCard = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [inProp, setInProp] = useState(true);
+  const [direction, setDirection] = useState("forward"); // Track direction
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+    setDirection("forward");
+    setInProp(false);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+      setInProp(true);
+    }, 300); // Match this duration with the CSS animation duration
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? quotes.length - 1 : prevIndex - 1
-    );
+    setDirection("backward");
+    setInProp(false);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? quotes.length - 1 : prevIndex - 1
+      );
+      setInProp(true);
+    }, 300);
   };
 
   const { text, author, rating } = quotes[currentIndex];
@@ -54,9 +68,12 @@ const TestimonialCard = () => {
           xs: 256,
           sm: 320,
         },
-        width: 320,
+        width: "100%",
         marginInline: "auto",
         marginTop: 4,
+        mb: {
+          lg: 4,
+        },
       }}
     >
       {/* Card */}
@@ -66,65 +83,79 @@ const TestimonialCard = () => {
           backgroundColor: "transparent",
           border: "1px solid #000000",
           boxShadow:
-            "5px 5px 0px  rgba(0, 71, 174,1), -1px 0px 0px rgba(0, 71, 174,1)",
+            "5px 5px 0px rgba(0, 71, 174,1), -1px 0px 0px rgba(0, 71, 174,1)",
           position: "relative",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
+          alignItems: "center",
           overflow: "hidden",
           maxHeight: 320,
           height: 320,
           paddingInline: 1.5,
         }}
       >
-        {/* Testimonial Text */}
-        <CardContent>
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: "1rem",
-              fontStyle: "italic",
-              color: "#333",
-              textAlign: "start",
-            }}
-          >
-            "{text}"
-          </Typography>
-
-          {/* Author */}
-          <Typography
-            variant="body2"
-            sx={{
-              textAlign: "right",
-              fontWeight: 600,
-              marginTop: 2,
-              color: "#333",
-            }}
-          >
-            - {author}
-          </Typography>
-        </CardContent>
-
-        {/* Star Rating */}
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 2,
-          }}
+        {/* Animated Content */}
+        <CSSTransition
+          in={inProp}
+          timeout={300}
+          classNames={
+            direction === "forward" ? "quote-forward" : "quote-backward"
+          }
+          unmountOnExit
         >
-          {[...Array(5)].map((_, index) =>
-            index < rating ? (
-              <Star key={index} sx={{ color: "#FFD700", fontSize: "1.5rem" }} />
-            ) : (
-              <StarBorder
-                key={index}
-                sx={{ color: "#FFD700", fontSize: "1.5rem" }}
-              />
-            )
-          )}
-        </Box>
+          <CardContent>
+            {/* Testimonial Text */}
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: "1rem",
+                fontStyle: "italic",
+                color: "#333",
+                textAlign: "start",
+              }}
+            >
+              "{text}"
+            </Typography>
+
+            {/* Author */}
+            <Typography
+              variant="body2"
+              sx={{
+                textAlign: "right",
+                fontWeight: 600,
+                marginTop: 2,
+                color: "#333",
+              }}
+            >
+              - {author}
+            </Typography>
+
+            {/* Star Rating */}
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: 2,
+              }}
+            >
+              {[...Array(5)].map((_, index) =>
+                index < rating ? (
+                  <Star
+                    key={index}
+                    sx={{ color: "#FFD700", fontSize: "1.5rem" }}
+                  />
+                ) : (
+                  <StarBorder
+                    key={index}
+                    sx={{ color: "#FFD700", fontSize: "1.5rem" }}
+                  />
+                )
+              )}
+            </Box>
+          </CardContent>
+        </CSSTransition>
       </Card>
 
       {/* Navigation Buttons */}

@@ -34,7 +34,7 @@ const VisionSection = ({
           color: "#0047AE", // Custom color
           fontWeight: 900,
           fontStyle: "capitalize",
-          mb: theme.spacing(5), // Margin bottom using theme
+          // mb: theme.spacing(3), // Margin bottom using theme
           fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" },
         }}
       >
@@ -57,7 +57,10 @@ const VisionSection = ({
           sx={{
             width: { xs: "100%", lg: "50%" },
             display: "flex",
-            justifyContent: "center",
+            justifyContent: {
+              lg: reverse ? "right" : "left",
+              xs:"center"
+            },
             alignItems: "center",
           }}
         >
@@ -90,7 +93,10 @@ const VisionSection = ({
             alt="Vision Section"
             style={{
               width: "100%",
-              maxWidth: "500px",
+              maxWidth: {
+                xs: "100%",
+                sm: "600px",
+              },
               height: "auto",
               objectFit: "cover",
             }}
@@ -108,7 +114,10 @@ const VisionSection = ({
               textAlign: "justify",
               color: "text.primary", // Use theme's primary text color
               width: "90%", // Take most of the screen width on small screens
-              maxWidth: "500px", // Maximum width for larger screens
+              maxWidth: {
+                sm: "500px",
+                xs: "400px",
+              }, // Maximum width for larger screens
               px: { xs: 3, sm: 8, md: 8, lg: 10 }, // Inline padding on different breakpoints
               py: { xs: 10, sm: 10, lg: 10 }, // Vertical padding for responsiveness
             }}

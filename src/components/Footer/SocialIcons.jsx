@@ -23,7 +23,7 @@ const SocialIcons = () => {
     <Box
       sx={{
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "start",
         alignItems: "center",
         gap: 2, // Gap between icons
         marginTop: 2,

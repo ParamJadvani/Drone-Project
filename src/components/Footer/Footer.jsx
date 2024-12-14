@@ -7,18 +7,21 @@ import { Link } from "react-router-dom";
 import { Phone, Email, LocationOn } from "@mui/icons-material";
 
 const Footer = () => {
-  const theme = useTheme(); // Access the theme
+  const theme = useTheme();
 
   return (
     <Box
       sx={{
         width: "100%",
-        backgroundColor: theme.palette.primary.main, // Use primary color from theme
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.common.white,
         paddingBottom: "15px",
       }}
     >
       <Box
         sx={{
+          // py: { xs: 3, sm: 4, md: 6 },
+          // paddingInline: { xs: 2, sm: 4, md: 6 },
           width: "100%",
           backgroundColor: theme.palette.primary.main, // Use primary color from theme
           py: 4,
@@ -27,233 +30,140 @@ const Footer = () => {
           paddingInline: { lg: "100px", md: "50px", xs: "0px" }, // Add 150px padding inline (left and right)
         }}
       >
-        <Box
+        <Grid
+          container
+          spacing={4}
           sx={{
-            mt: 6,
+            justifyContent: { xs: "center", md: "space-between" },
+            alignItems: "flex-start",
+            textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Grid
-            container
-            spacing={4}
-            sx={{
-              px: { xs: 2, sm: 4, md: 6 },
-              justifyContent: "space-between",
-            }}
-          >
-            {/* Section 1: Logo, Tagline, Social Icons */}
-            <Grid
-              item
-              xs={12}
-              md={6}
-              lg={3}
+          {/* Logo and Social Icons */}
+          <Grid item xs={12} md={3}>
+            <Box
+              component="img"
+              src={logo}
+              alt="Vymanika Aerospace Logo"
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                textAlign: "center",
-                px: 4,
+                width: { xs: "100px", sm: "150px" },
+                height: "auto",
+                mx: { xs: "auto", md: "0" },
+                mb: 2,
+              }}
+            />
+            <Typography
+              variant="body2"
+              sx={{
+                fontSize: { xs: "14px", sm: "16px" },
+                lineHeight: 1.5,
+                mb: 2,
+                letterSpacing: 1.2,
               }}
             >
-              {/* Logo */}
-              <Box
-                component="img"
-                src={logo}
-                alt="Vymanika Aerospace Logo"
-                sx={{
-                  width: { xs: "120px", sm: "150px" },
-                  height: "auto",
-                  mb: 2,
-                }}
-              />
-
-              {/* Tagline */}
-              <Typography
-                variant="body2"
-                sx={{
-                  fontSize: { xs: "12px", sm: "14px" },
-                  lineHeight: "1.4",
-                  textAlign: "center",
-                  mb: 2,
-                  letterSpacing: 1.2,
-                }}
-              >
-                "Soaring Beyond Limits, Crafting the Future of Aviation –
-                Vymanika Aerospace"
-              </Typography>
-
-              {/* Social Media Icons */}
-              <SocialIcons />
-            </Grid>
-
-            {/* Section 2: Pages Links */}
-            <Grid item xs={12} md={6} lg={3}>
-              <Section
-                title="Pages"
-                content={
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      gap: 2,
-                      marginTop: 2,
-                    }}
-                  >
-                    <Link
-                      to="/about"
-                      style={{
-                        color: theme.palette.common.white, // Use theme's white color
-                        textDecoration: "none",
-                        fontSize: "18px",
-                        fontWeight: 500,
-                        borderRadius: "4px",
-                        width: "100%",
-                      }}
-                    >
-                      About Us
-                    </Link>
-
-                    <Link
-                      to="/services"
-                      style={{
-                        color: theme.palette.common.white,
-                        textDecoration: "none",
-                        fontSize: "18px",
-                        fontWeight: 500,
-                        borderRadius: "4px",
-                        width: "100%",
-                      }}
-                    >
-                      Services
-                    </Link>
-
-                    <Link
-                      to="/training"
-                      style={{
-                        color: theme.palette.common.white,
-                        textDecoration: "none",
-                        fontSize: "18px",
-                        fontWeight: 500,
-                        borderRadius: "4px",
-                        width: "100%",
-                      }}
-                    >
-                      Training
-                    </Link>
-
-                    <Link
-                      to="#"
-                      style={{
-                        color: theme.palette.common.white,
-                        textDecoration: "none",
-                        fontSize: "18px",
-                        fontWeight: 500,
-                        borderRadius: "4px",
-                        width: "100%",
-                      }}
-                    >
-                      Knowledge
-                    </Link>
-                  </Box>
-                }
-              />
-            </Grid>
-
-            {/* Section 3: Our Services */}
-            <Grid item xs={12} md={6} lg={3}>
-              <Section
-                title="Our Services"
-                content={
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: 1.5,
-                      alignItems: "flex-start",
-                      width: "100%",
-                    }}
-                  >
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: { xs: "14px", sm: "16px" },
-                        color: theme.palette.common.white, // Use theme's white color
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      Drone Show
-                    </Typography>
-
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: { xs: "14px", sm: "16px" },
-                        color: theme.palette.common.white,
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      Surveying & Mapping
-                    </Typography>
-
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: { xs: "14px", sm: "16px" },
-                        color: theme.palette.common.white,
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      Agriculture Spraying
-                    </Typography>
-
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        fontSize: { xs: "14px", sm: "16px" },
-                        color: theme.palette.common.white,
-                        lineHeight: 1.5,
-                      }}
-                    >
-                      Wind Turbine Inspection
-                    </Typography>
-                  </Box>
-                }
-              />
-            </Grid>
-
-            {/* Section 4: Contact Info */}
-            <Grid item xs={12} md={6} lg={3}>
-              <Section
-                title="Contact Info"
-                isContact={true}
-                content={[
-                  { icon: <Phone color="inherit" />, text: "+91 89053 65128" },
-                  {
-                    icon: <Email color="inherit" />,
-                    text: "vyamicaaerospace@gmail.com",
-                  },
-                  {
-                    icon: <LocationOn color="inherit" />,
-                    text: "204, Royal Business Hub, Variyav Road, Surat",
-                  },
-                ]}
-              />
-            </Grid>
+              "Soaring Beyond Limits, Crafting the Future of Aviation – Vymanika
+              Aerospace"
+            </Typography>
+            <SocialIcons />
           </Grid>
-        </Box>
+
+          {/* Pages Links */}
+          <Grid item xs={12} md={3}>
+            <Section
+              title="Pages"
+              content={
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1.5,
+                  }}
+                >
+                  {["About Us", "Services", "Training", "Knowledge"].map(
+                    (page, idx) => (
+                      <Link
+                        key={idx}
+                        to={`/${page.toLowerCase().replace(/\s+/g, "")}`}
+                        style={{
+                          color: theme.palette.common.white,
+                          textDecoration: "none",
+                          fontSize: "16px",
+                          fontWeight: 500,
+                          transition: "color 0.3s",
+                        }}
+                        onMouseEnter={(e) =>
+                          (e.target.style.color = theme.palette.secondary.main)
+                        }
+                        onMouseLeave={(e) =>
+                          (e.target.style.color = theme.palette.common.white)
+                        }
+                      >
+                        {page}
+                      </Link>
+                    )
+                  )}
+                </Box>
+              }
+            />
+          </Grid>
+
+          {/* Services */}
+          <Grid item xs={12} md={3}>
+            <Section
+              title="Our Services"
+              content={[
+                "Drone Show",
+                "Surveying & Mapping",
+                "Agriculture Spraying",
+                "Wind Turbine Inspection",
+              ].map((service, idx) => (
+                <Typography
+                  key={idx}
+                  variant="body1"
+                  sx={{
+                    fontSize: { xs: "14px", sm: "16px" },
+                    color: theme.palette.common.white,
+                    lineHeight: 1.5,
+                    "&:hover": {
+                      color: theme.palette.secondary.main,
+                      cursor: "pointer",
+                    },
+                  }}
+                >
+                  {service}
+                </Typography>
+              ))}
+            />
+          </Grid>
+
+          {/* Contact Info */}
+          <Grid item xs={12} md={3}>
+            <Section
+              title="Contact Info"
+              isContact={true}
+              content={[
+                { icon: <Phone />, text: "+91 89053 65128" },
+                { icon: <Email />, text: "vyamicaaerospace@gmail.com" },
+                {
+                  icon: <LocationOn />,
+                  text: "204, Royal Business Hub, Variyav Road, Surat",
+                },
+              ]}
+            />
+          </Grid>
+        </Grid>
       </Box>
+
       {/* Divider */}
       <Divider sx={{ borderColor: theme.palette.common.white, my: 4 }} />
 
-      {/* Copyright */}
-      <Box sx={{ textAlign: "center", mt: 2 }}>
+      {/* Footer Bottom */}
+      <Box sx={{ textAlign: "center", py: 2 }}>
         <Typography
-          variant="body1"
+          variant="body2"
           sx={{
-            fontsize: "25px",
-            color: theme.palette.common.white, // Use white color from theme
-            fontWeight: 500,
+            fontSize: { xs: "14px", sm: "16px" },
+            color: theme.palette.common.white,
           }}
         >
           © 2024 Vymanika Aerospace. All rights reserved.

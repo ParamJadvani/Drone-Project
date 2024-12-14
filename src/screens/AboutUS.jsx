@@ -29,7 +29,7 @@ const AboutUS = () => {
           paddingInline: { lg: "50px", md: "25px", xs: "0px" },
         }}
       >
-        <Box sx={{ padding: { xs: 2, sm: 4 } }}>
+        <Box>
           {/* About Banner with Content */}
           <Banner
             reverse
@@ -42,8 +42,8 @@ const AboutUS = () => {
                   sx={{
                     fontWeight: 900,
                     color: theme.palette.secondary.main,
-                    textAlign: "center",
-                    fontSize: { xs: "1.7rem", sm: "2.2rem" },
+                    textAlign: "start",
+                    fontSize: { xs: "1.7rem", sm: "2rem" },
                   }}
                 >
                   About Vymanika Aerospace

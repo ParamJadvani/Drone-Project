@@ -26,7 +26,7 @@ import drone from "../assets/CardImage/drone.png";
 import certificate from "../assets/CardImage/winner.png";
 import mapping from "../assets/CardImage/mapping.png";
 import pilot from "../assets/CardImage/pilot.png";
-
+import dc from "../assets/SectionImage/drone-cuate.png";
 // Data for "Our Services" Section
 const servicesData = [
   {
@@ -98,7 +98,7 @@ const Home = () => {
                 sx={{
                   fontWeight: 900,
                   color: theme.palette.secondary.main,
-                  textAlign: "center",
+                  textAlign: "start",
                 }}
               >
                 Innovating the Future of UAV Technology
@@ -110,7 +110,7 @@ const Home = () => {
                   fontStyle: "italic",
                   color: theme.palette.text.primary,
                   fontWeight: 700,
-                  textAlign: { xs: "center", lg: "left" },
+                  textAlign: "start",
                 }}
               >
                 “Shaping the Future of Aerospace with Cutting-Edge UAV
@@ -185,8 +185,9 @@ const Home = () => {
           </Typography>
           <Grid
             container
-            rowSpacing={3}
-            columnSpacing={{ lg: 20, md: 10, sm: 10, xs: 1 }}
+            // rowSpacing={3}
+            // columnSpacing={{ lg: 20, md: 10, sm: 10, xs: 1 }}
+            spacing={3}
             mb={10}
           >
             {servicesData.map(({ image, title, description }, index) => (
@@ -205,6 +206,7 @@ const Home = () => {
           image={onrev}
           contentDiv={<TestimonialCard />}
           title="Client Testimonial"
+          reverse={true}
         />
 
         {/* "Training & Courses" Section */}
@@ -222,7 +224,7 @@ const Home = () => {
           </Typography>
           <Grid container spacing={3} mb={10}>
             {trainingData.map(({ image, title, description }, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
+              <Grid item xs={12} sm={6} md={6} lg={4} key={index}>
                 <ResponsiveCard
                   image={image}
                   title={title}
@@ -231,7 +233,24 @@ const Home = () => {
               </Grid>
             ))}
           </Grid>
-          <Box>
+        </Box>
+
+        {/* Contact Us */}
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            sx={{
+              padding: theme.spacing(3, 2), // Top-bottom and left-right padding
+              maxWidth: "600px", // Ensure max width is applied
+              width: "100%",
+            }}
+          >
             <Typography
               variant="h4"
               sx={{
@@ -239,12 +258,13 @@ const Home = () => {
                 color: "#0047AE", // Custom color
                 fontWeight: 900,
                 fontStyle: "capitalize",
-                mb: theme.spacing(5), // Margin bottom using theme
+                mb: theme.spacing(3), // Margin bottom using theme
                 fontSize: { xs: "1.5rem", sm: "2rem", lg: "2.5rem" },
               }}
             >
               {"contact us".toUpperCase()}
             </Typography>
+
             <Box
               sx={{
                 marginInline: "auto",
@@ -253,13 +273,11 @@ const Home = () => {
                   "5px 5px 0px rgba(0, 71, 174, 1), -1px 0px 0px rgba(0, 71, 174, 1)",
                 position: "relative",
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: "row", // Stack vertically on small screens
                 justifyContent: "space-between",
                 alignItems: "center",
                 overflow: "hidden",
                 paddingInline: 1.5,
-                maxWidth: 700,
-                width: "100%", // Ensure full width for responsiveness
                 backgroundColor: "white",
               }}
             >
@@ -277,25 +295,122 @@ const Home = () => {
                     fontSize: "1rem",
                   },
                   input: {
-                    padding: "10px",
+                    padding: {
+                      xs: "8px",
+                      sm: "10px",
+                    },
                   },
                 }}
               />
 
               {/* Send Icon Button */}
               <IconButton
+                size="small"
                 sx={{
                   color: "rgba(0, 71, 174, 1)",
-                  borderRadius: "50%",
-                  padding: "10px",
-                  marginLeft: 1,
+                  padding: {
+                    xs: "0px",
+                    sm: "10px",
+                  },
+                  marginLeft: { xs: 0, sm: 1 }, // Remove left margin on small screens
                 }}
               >
-                <IoPaperPlaneOutline size={30} />
+                <IoPaperPlaneOutline
+                  style={{
+                    fontSize: "20px", // Default size
+                  }}
+                  size={window.innerWidth < 600 ? 19 : 30}
+                />
               </IconButton>
             </Box>
           </Box>
         </Box>
+
+        {/* Service Category Banner */}
+        <Banner
+          image={dc}
+          smallImage={true}
+          title="Service Categories"
+          contentDiv={
+            <Box>
+              <Grid container>
+                <Grid item xs={12}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 6,
+                    }}
+                  >
+                    {/* UAV Design & Manufacturing */}
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 800,
+                          color: theme.palette.text.primary,
+                          marginBottom: 2,
+                        }}
+                      >
+                        1. DGCA Type-Certified Drone Selling
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: theme.palette.text.primary,
+                          fontWeight: 500,
+                          lineHeight: 1.6,
+                          fontSize: { xs: "0.9rem", sm: "1rem" },
+                          width: {
+                            xs: "80%",
+                            sm: "100%",
+                          },
+                        }}
+                      >
+                        DGCA-certified drones meet safety and quality standards,
+                        making them eligible for lawful operations. Selling
+                        certified drones ensures compliance with Indian
+                        regulations, fostering reliability and market trust
+                      </Typography>
+                    </Box>
+
+                    {/* UAV Components */}
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          fontWeight: 800,
+                          color: theme.palette.text.primary,
+                          marginBottom: 2,
+                        }}
+                      >
+                        2. Drone Maintenance and Repair
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: theme.palette.text.primary,
+                          fontWeight: 500,
+                          lineHeight: 1.6,
+                          fontSize: { xs: "0.9rem", sm: "1rem" },
+                          width: {
+                            xs: "100%",
+                            sm: "80%",
+                          },
+                        }}
+                      >
+                        Regular maintenance ensures drones operate safely and
+                        efficiently. Key tasks include cleaning, inspecting
+                        parts, replacing damaged components, and updating
+                        software to enhance performance and lifespan.
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Box>
+          }
+        />
       </Box>
       <Footer />
     </Box>

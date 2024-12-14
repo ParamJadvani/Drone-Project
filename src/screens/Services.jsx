@@ -84,7 +84,7 @@ const Services = () => {
           paddingInline: { lg: "50px", md: "25px", xs: "0px" },
         }}
       >
-        <Box sx={{ padding: { xs: 2, sm: 4 } }}>
+        <Box>
           {/* About Banner with Content */}
           <Banner
             image={Services_banner}
@@ -96,7 +96,7 @@ const Services = () => {
                   sx={{
                     fontWeight: 900,
                     color: "#0047AE",
-                    textAlign: "center",
+                    textAlign: "start",
                     fontSize: { xs: "1.8rem", sm: "2.5rem" },
                     marginBottom: 2,
                   }}
@@ -189,41 +189,41 @@ const Services = () => {
           {/* Service Category Banner */}
           <Banner
             image={dc}
+            smallImage={true}
             title="Service Categories"
-            reverse={true}
             contentDiv={
               <Box>
-                <Grid container spacing={4}>
+                <Grid container>
                   <Grid item xs={12}>
                     <Box
-                      sx={{ display: "flex", flexDirection: "column", gap: 4 }}
+                      sx={{ display: "flex", flexDirection: "column", gap: 6 }}
                     >
                       {/* UAV Design & Manufacturing */}
                       <Box>
                         <Typography
                           variant="h6"
                           sx={{
-                            fontWeight: 700,
+                            fontWeight: 800,
                             color: theme.palette.text.primary,
                             marginBottom: 2,
                           }}
                         >
-                          <strong>1.</strong> UAV Design & Manufacturing
+                          1. DGCA Type-Certified Drone Selling
                         </Typography>
                         <Typography
                           variant="body2"
                           sx={{
-                            color: theme.palette.text.secondary,
-                            fontWeight: 400,
+                            color: theme.palette.text.primary,
+                            fontWeight: 500,
                             lineHeight: 1.6,
                             fontSize: { xs: "0.9rem", sm: "1rem" },
                           }}
                         >
-                          We create high-performance UAVs that cater to specific
-                          needs, combining advanced engineering with innovative
-                          technology. Our drones are built for efficiency,
-                          durability, and adaptability, ensuring they excel in
-                          challenging environments.
+                          DGCA-certified drones meet safety and quality
+                          standards, making them eligible for lawful operations.
+                          Selling certified drones ensures compliance with
+                          Indian regulations, fostering reliability and market
+                          trust
                         </Typography>
                       </Box>
 
@@ -232,55 +232,26 @@ const Services = () => {
                         <Typography
                           variant="h6"
                           sx={{
-                            fontWeight: 700,
+                            fontWeight: 800,
                             color: theme.palette.text.primary,
                             marginBottom: 2,
                           }}
                         >
-                          <strong>2.</strong> UAV Components
+                          2. Drone Maintenance and Repair
                         </Typography>
                         <Typography
                           variant="body2"
                           sx={{
-                            color: theme.palette.text.secondary,
-                            fontWeight: 400,
-                            lineHeight: 1.6,
-                            fontSize: { xs: "0.9rem", sm: "1rem" },
-                          }}
-                        >
-                          Our expert team designs and integrates specialized UAV
-                          components to enhance performance, reliability, and
-                          functionality. From payload systems to advanced
-                          navigation, we provide cutting-edge solutions tailored
-                          to your requirements.
-                        </Typography>
-                      </Box>
-
-                      {/* Custom Solutions */}
-                      <Box>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            fontWeight: 700,
                             color: theme.palette.text.primary,
-                            marginBottom: 2,
-                          }}
-                        >
-                          <strong>3.</strong> Custom Solutions
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: theme.palette.text.secondary,
-                            fontWeight: 400,
+                            fontWeight: 500,
                             lineHeight: 1.6,
                             fontSize: { xs: "0.9rem", sm: "1rem" },
                           }}
                         >
-                          We offer tailor-made UAV services and solutions to
-                          meet unique industry demands. From concept design to
-                          final deployment, our custom offerings guarantee
-                          satisfaction and precision.
+                          Regular maintenance ensures drones operate safely and
+                          efficiently. Key tasks include cleaning, inspecting
+                          parts, replacing damaged components, and updating
+                          software to enhance performance and lifespan.
                         </Typography>
                       </Box>
                     </Box>
