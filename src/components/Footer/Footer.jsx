@@ -61,8 +61,7 @@ const Footer = () => {
                 letterSpacing: 1.2,
               }}
             >
-              "Soaring Beyond Limits, Crafting the Future of Aviation – Vymanika
-              Aerospace"
+              "Soaring Beyond Limits, Crafting the Future of Aviation – Vymanika Aerospace"
             </Typography>
             <SocialIcons />
           </Grid>
@@ -112,7 +111,7 @@ const Footer = () => {
             <Section
               title="Our Services"
               content={[
-                "Drone Show",
+                "Drone show ",
                 "Surveying & Mapping",
                 "Agriculture Spraying",
                 "Wind Turbine Inspection",
@@ -143,10 +142,10 @@ const Footer = () => {
               isContact={true}
               content={[
                 { icon: <Phone />, text: "+91 89053 65128" },
-                { icon: <Email />, text: "vyamicaaerospace@gmail.com" },
+                { icon: <Email />, text: "Vymanikaaerospace@gmail.com" },
                 {
                   icon: <LocationOn />,
-                  text: "204, Royal Business Hub, Variyav Road, Surat",
+                  text: "204, Royal Business Hub,Variyav Road , Surat",
                 },
               ]}
             />
@@ -166,7 +165,7 @@ const Footer = () => {
             color: theme.palette.common.white,
           }}
         >
-          © 2024 Vymanika Aerospace. All rights reserved.
+        copyright VymanikaAerospace@2024 all right reserved
         </Typography>
       </Box>
     </Box>
