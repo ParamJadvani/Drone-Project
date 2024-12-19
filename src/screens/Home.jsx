@@ -12,6 +12,8 @@ import {
 import { IoPaperPlaneOutline } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Vision_Section from "../components/Vision_Section";
+import VisionDrone from "../assets/Image PNG/freepik--drone-1--inject-1-4.png"
+import VisionDroneRight from "../assets/Image PNG/freepik--drone-1--inject-1-1.png"
 import Banner from "../components/Banner";
 import Footer from "../components/Footer/Footer";
 import ResponsiveCard from "../components/ResponsiveCard";
@@ -161,6 +163,8 @@ const Home = () => {
           {/* Vision Section */}
           <Vision_Section
             title="Our Mission"
+            Drone={VisionDrone}
+            Droneright={VisionDroneRight}
             vectorImage={OMV}
             backgroundimage={jadu}
             description="At Vymanika Aerospace's mission is to advance the aerospace industry with innovative unmanned aerial vehicles (UAVs) and components. We are dedicated to delivering high-performance, reliable solutions that enhance UAV capabilities, meet diverse industry needs, and drive the future of unmanned aviation for a safer, more connected world."

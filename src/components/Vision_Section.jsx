@@ -8,6 +8,8 @@ const VisionSection = ({
   vectorImage,
   title,
   description,
+  Droneright,
+  Drone,
   backgroundimage,
   reverse = false,
 }) => {
@@ -65,6 +67,16 @@ const VisionSection = ({
           }}
         >
           <img
+            src={Drone}
+            alt="Vector Illustration"
+            style={{
+              width: "100%",
+              maxWidth: "200px",
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
+          <img
             src={vectorImage}
             alt="Vector Illustration"
             style={{
@@ -101,6 +113,7 @@ const VisionSection = ({
               objectFit: "cover",
             }}
           />
+          
 
           {/* Overlay Description */}
           <Box
@@ -142,7 +155,18 @@ const VisionSection = ({
             </Typography>
           </Box>
         </Box>
+        <img
+            src={Droneright}
+            alt="Vector Illustration"
+            style={{
+              width: "100%",
+              maxWidth: "200px",
+              height: "auto",
+              objectFit: "contain",
+            }}
+          />
       </Box>
+      
     </Box>
   );
 };
