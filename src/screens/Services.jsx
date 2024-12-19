@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Grid, useTheme } from "@mui/material";
+import { Box, Typography, Grid, useTheme, Container } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Services_banner from "../assets/BannerImage/Service.png";
@@ -76,192 +76,199 @@ const Services = () => {
       }}
     >
       <Navbar />
-
-      <Box
-        sx={{
-          backgroundColor: theme.palette.background.default,
-          minHeight: "100vh",
-          paddingInline: { lg: "50px", md: "25px", xs: "0px" },
-        }}
-      >
-        <Box>
-          {/* About Banner with Content */}
-          <Banner
-            image={Services_banner}
-            contentDiv={
-              <Box>
-                {/* Title Section */}
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontWeight: 900,
-                    color: "#0047AE",
-                    textAlign: "start",
-                    fontSize: { xs: "1.8rem", sm: "2.5rem" },
-                    marginBottom: 2,
-                  }}
-                >
-                  Overview of Services
-                </Typography>
-
-                {/* Body Description */}
-                <Typography
-                  variant="body1"
-                  sx={{
-                    marginTop: 2,
-                    color: theme.palette.text.primary,
-                    fontWeight: 400,
-                    textAlign: "justify",
-                    fontSize: { xs: "1rem", sm: "1.1rem" },
-                    lineHeight: 1.6,
-                  }}
-                >
-                  At Vymanika Aerospace, we specialize in delivering
-                  cutting-edge UAV solutions tailored to diverse industries. Our
-                  state-of-the-art drones and services are designed to enhance
-                  efficiency, safety, and accuracy across a wide range of
-                  applications. Whether you need precise agricultural spraying
-                  or advanced infrastructure inspections, our expertise ensures
-                  that your operational goals are met with unparalleled quality
-                  and reliability.
-                </Typography>
-              </Box>
-            }
-          />
-
-          {/* Responsive Cards in Grid with Padding */}
-          <Box
-            sx={
-              {
-                // 150px padding on both sides of the grid
-              }
-            }
-          >
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 900,
-                textAlign: "center",
-                marginBottom: 9,
-                color: theme.palette.secondary.main,
-              }}
-            >
-              Our Services
-            </Typography>
-
-            <Grid
-              container
-              rowSpacing={3}
-              columnSpacing={20}
-              mb={10}
-              sx={{
-                justifyContent:
-                  servicesData.length % 3 === 1 || servicesData.length % 3 === 2
-                    ? "center"
-                    : "flex-start",
-              }}
-            >
-              {servicesData.map(
-                ({ icon, title: t_text, description: d_text }, index) => (
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={6}
-                    lg={4}
-                    key={index}
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            backgroundColor: theme.palette.background.default,
+            minHeight: "100vh",
+            paddingInline: { lg: "50px", md: "25px", xs: "0px" },
+          }}
+        >
+          <Box>
+            {/* About Banner with Content */}
+            <Banner
+              image={Services_banner}
+              contentDiv={
+                <Box>
+                  {/* Title Section */}
+                  <Typography
+                    variant="h4"
                     sx={{
-                      marginInline: { lg: -4, md: -1 }, // Adjust spacing if necessary
+                      fontWeight: 900,
+                      color: "#0047AE",
+                      textAlign: "start",
+                      fontSize: { xs: "1.8rem", sm: "2.5rem" },
+                      marginBottom: 2,
                     }}
                   >
-                    <ResponsiveCard
-                      image={icon}
-                      title={t_text}
-                      description={d_text}
-                      marginb={true}
-                    />
-                  </Grid>
-                )
-              )}
-            </Grid>
-          </Box>
+                    Overview of Services
+                  </Typography>
 
-          {/* Service Category Banner */}
-          <Banner
-            image={dc}
-            smallImage={true}
-            title="Service Categories"
-            contentDiv={
-              <Box>
-                <Grid container>
-                  <Grid item xs={12}>
-                    <Box
-                      sx={{ display: "flex", flexDirection: "column", gap: 6 }}
+                  {/* Body Description */}
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      marginTop: 2,
+                      color: theme.palette.text.primary,
+                      fontWeight: 400,
+                      textAlign: "justify",
+                      fontSize: { xs: "1rem", sm: "1.1rem" },
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    At Vymanika Aerospace, we specialize in delivering
+                    cutting-edge UAV solutions tailored to diverse industries.
+                    Our state-of-the-art drones and services are designed to
+                    enhance efficiency, safety, and accuracy across a wide range
+                    of applications. Whether you need precise agricultural
+                    spraying or advanced infrastructure inspections, our
+                    expertise ensures that your operational goals are met with
+                    unparalleled quality and reliability.
+                  </Typography>
+                </Box>
+              }
+            />
+
+            {/* Responsive Cards in Grid with Padding */}
+            <Box
+              sx={
+                {
+                  // 150px padding on both sides of the grid
+                }
+              }
+            >
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 900,
+                  textAlign: "center",
+                  marginBottom: 9,
+                  color: theme.palette.secondary.main,
+                }}
+              >
+                Our Services
+              </Typography>
+
+              <Grid
+                container
+                rowSpacing={3}
+                columnSpacing={20}
+                mb={10}
+                sx={{
+                  justifyContent:
+                    servicesData.length % 3 === 1 ||
+                    servicesData.length % 3 === 2
+                      ? "center"
+                      : "flex-start",
+                }}
+              >
+                {servicesData.map(
+                  ({ icon, title: t_text, description: d_text }, index) => (
+                    <Grid
+                      item
+                      xs={12}
+                      sm={6}
+                      md={6}
+                      lg={4}
+                      key={index}
+                      sx={{
+                        marginInline: { lg: -4, md: -1 }, // Adjust spacing if necessary
+                      }}
                     >
-                      {/* UAV Design & Manufacturing */}
-                      <Box>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            fontWeight: 800,
-                            color: theme.palette.text.primary,
-                            marginBottom: 2,
-                          }}
-                        >
-                          1. DGCA Type-Certified Drone Selling
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: theme.palette.text.primary,
-                            fontWeight: 500,
-                            lineHeight: 1.6,
-                            fontSize: { xs: "0.9rem", sm: "1rem" },
-                          }}
-                        >
-                          DGCA-certified drones meet safety and quality
-                          standards, making them eligible for lawful operations.
-                          Selling certified drones ensures compliance with
-                          Indian regulations, fostering reliability and market
-                          trust
-                        </Typography>
-                      </Box>
+                      <ResponsiveCard
+                        image={icon}
+                        title={t_text}
+                        description={d_text}
+                        marginb={true}
+                      />
+                    </Grid>
+                  )
+                )}
+              </Grid>
+            </Box>
 
-                      {/* UAV Components */}
-                      <Box>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            fontWeight: 800,
-                            color: theme.palette.text.primary,
-                            marginBottom: 2,
-                          }}
-                        >
-                          2. Drone Maintenance and Repair
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: theme.palette.text.primary,
-                            fontWeight: 500,
-                            lineHeight: 1.6,
-                            fontSize: { xs: "0.9rem", sm: "1rem" },
-                          }}
-                        >
-                          Regular maintenance ensures drones operate safely and
-                          efficiently. Key tasks include cleaning, inspecting
-                          parts, replacing damaged components, and updating
-                          software to enhance performance and lifespan.
-                        </Typography>
+            {/* Service Category Banner */}
+            <Banner
+              image={dc}
+              smallImage={true}
+              title="Service Categories"
+              contentDiv={
+                <Box>
+                  <Grid container>
+                    <Grid item xs={12}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: 6,
+                        }}
+                      >
+                        {/* UAV Design & Manufacturing */}
+                        <Box>
+                          <Typography
+                            variant="h6"
+                            sx={{
+                              fontWeight: 800,
+                              color: theme.palette.text.primary,
+                              marginBottom: 2,
+                            }}
+                          >
+                            1. DGCA Type-Certified Drone Selling
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: theme.palette.text.primary,
+                              fontWeight: 500,
+                              lineHeight: 1.6,
+                              fontSize: { xs: "0.9rem", sm: "1rem" },
+                            }}
+                          >
+                            DGCA-certified drones meet safety and quality
+                            standards, making them eligible for lawful
+                            operations. Selling certified drones ensures
+                            compliance with Indian regulations, fostering
+                            reliability and market trust
+                          </Typography>
+                        </Box>
+
+                        {/* UAV Components */}
+                        <Box>
+                          <Typography
+                            variant="h6"
+                            sx={{
+                              fontWeight: 800,
+                              color: theme.palette.text.primary,
+                              marginBottom: 2,
+                            }}
+                          >
+                            2. Drone Maintenance and Repair
+                          </Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: theme.palette.text.primary,
+                              fontWeight: 500,
+                              lineHeight: 1.6,
+                              fontSize: { xs: "0.9rem", sm: "1rem" },
+                            }}
+                          >
+                            Regular maintenance ensures drones operate safely
+                            and efficiently. Key tasks include cleaning,
+                            inspecting parts, replacing damaged components, and
+                            updating software to enhance performance and
+                            lifespan.
+                          </Typography>
+                        </Box>
                       </Box>
-                    </Box>
+                    </Grid>
                   </Grid>
-                </Grid>
-              </Box>
-            }
-          />
+                </Box>
+              }
+            />
+          </Box>
         </Box>
-      </Box>
+      </Container>
       <Footer />
     </Box>
   );

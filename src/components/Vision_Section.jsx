@@ -80,7 +80,7 @@ const VisionSection = ({
         <Box
           sx={{
             position: "relative",
-            width: { xs: "100%",sm:"80%", md: "60%", lg: "50%" },
+            width: { xs: "100%", sm: "80%", md: "60%", lg: "50%" },
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -117,6 +117,7 @@ const VisionSection = ({
               maxWidth: {
                 sm: "500px",
                 xs: "400px",
+                xl: "850px",
               }, // Maximum width for larger screens
               px: { xs: 3, sm: 8, md: 8, lg: 10 }, // Inline padding on different breakpoints
               py: { xs: 10, sm: 10, lg: 10 }, // Vertical padding for responsiveness
@@ -128,8 +129,9 @@ const VisionSection = ({
               sx={{
                 fontSize: {
                   xs: "0.62rem",
-                  sm: "1rem",
+                  sm: "1.01rem",
                   lg: "1.05rem",
+                  xl: "1.24rem",
                 },
                 fontWeight: 500,
                 lineHeight: 1.6,

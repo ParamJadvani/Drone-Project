@@ -55,145 +55,148 @@ const Training = () => {
       }}
     >
       <Navbar />
-      <Box
-        sx={{
-          backgroundColor: theme.palette.background.default,
-          minHeight: "100vh",
-          paddingInline: { lg: "50px", md: "25px", xs: "0px" }, // Add 150px padding inline (left and right)
-        }}
-      >
-        <Container sx={{ paddingTop: { xs: 4, sm: 6 }, paddingBottom: 6 }}>
-          {/* Banner Section */}
-          <Banner
-            reverse={true}
-            image={cap}
-            contentDiv={
-              <Box sx={{ paddingBottom: 4 }}>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontWeight: 900,
-                    color: "#0047AE",
-                    fontSize: { xs: "1.5rem", sm: "2rem" },
-                    marginBottom: 3,
-                    textAlign: "center",
-                  }}
-                >
-                  Training Programs Overview
-                </Typography>
-
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: theme.palette.text.primary,
-                    fontWeight: 400,
-                    fontSize: { xs: "1rem", sm: "1.1rem" },
-                    lineHeight: 1.6,
-                    textAlign: "justify",
-                    maxWidth: { xs: "100%", sm: "90%" },
-                    marginX: "auto",
-                  }}
-                >
-                  Vymanika Aerospace offers comprehensive drone training
-                  programs designed to equip participants with the skills and
-                  certifications required for excelling in the UAV industry.
-                  From mastering agricultural spraying techniques to creating
-                  stunning aerial photography, our courses cater to both
-                  beginners and experienced professionals.
-                </Typography>
-              </Box>
-            }
-          />
-
-          {/* Responsive Cards in Grid */}
-          <Box sx={{ padding: 2 }}>
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 900,
-                textAlign: "center",
-                marginBottom: 9,
-                color: theme.palette.secondary.main,
-                fontStyle: "capitalized",
-              }}
-            >
-              Course Categories
-            </Typography>
-
-            <Grid
-              container
-              spacing={3}
-              mb={10}
-              sx={{
-                justifyContent:
-                  trainingData.length % 3 === 1 || trainingData.length % 3 === 2
-                    ? "center"
-                    : "flex-start",
-              }}
-            >
-              {trainingData.map(
-                ({ icon, title: t_text, description: d_text }, index) => (
-                  <Grid
-                    item
-                    xs={12} // Full width on extra small screens
-                    sm={6} // 2 cards per row on small screens
-                    md={4} // 3 cards per row on medium screens
-                    key={index}
+      <Container maxWidth="xl">
+        <Box
+          sx={{
+            backgroundColor: theme.palette.background.default,
+            minHeight: "100vh",
+            paddingInline: { lg: "50px", md: "25px", xs: "0px" }, // Add 150px padding inline (left and right)
+          }}
+        >
+          <Container sx={{ paddingTop: { xs: 4, sm: 6 }, paddingBottom: 6 }}>
+            {/* Banner Section */}
+            <Banner
+              reverse={true}
+              image={cap}
+              contentDiv={
+                <Box sx={{ paddingBottom: 4 }}>
+                  <Typography
+                    variant="h4"
                     sx={{
-                      display: "flex",
-                      justifyContent: "center", // Center the cards horizontally
+                      fontWeight: 900,
+                      color: "#0047AE",
+                      fontSize: { xs: "1.5rem", sm: "2rem" },
+                      marginBottom: 3,
+                      textAlign: "center",
                     }}
                   >
-                    <ResponsiveCard
-                      image={icon}
-                      title={t_text}
-                      description={d_text}
-                    />
-                  </Grid>
-                )
-              )}
-            </Grid>
-          </Box>
+                    Training Programs Overview
+                  </Typography>
 
-          {/* Certification */}
-          <Banner
-            image={cb}
-            contentDiv={
-              <Box sx={{ paddingBottom: 4 }}>
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontWeight: 900,
-                    color: "#0047AE",
-                    fontSize: { xs: "1.5rem", sm: "2rem" },
-                    marginBottom: 3,
-                    textAlign: "center",
-                  }}
-                >
-                  CERTIFICATION
-                </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: theme.palette.text.primary,
+                      fontWeight: 400,
+                      fontSize: { xs: "1rem", sm: "1.1rem" },
+                      lineHeight: 1.6,
+                      textAlign: "justify",
+                      maxWidth: { xs: "100%", sm: "90%" },
+                      marginX: "auto",
+                    }}
+                  >
+                    Vymanika Aerospace offers comprehensive drone training
+                    programs designed to equip participants with the skills and
+                    certifications required for excelling in the UAV industry.
+                    From mastering agricultural spraying techniques to creating
+                    stunning aerial photography, our courses cater to both
+                    beginners and experienced professionals.
+                  </Typography>
+                </Box>
+              }
+            />
 
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: theme.palette.text.primary,
-                    fontWeight: 700,
-                    fontSize: { xs: "1rem", sm: "1.1rem" },
-                    lineHeight: 1.6,
-                    textAlign: "center",
-                    maxWidth: { xs: "100%", sm: "80%" },
-                    marginX: "auto",
-                  }}
-                >
-                  Participants receive industry-recognized certifications upon
-                  successful completion of their training, including
-                  DGCA-certified Remote Pilot Certificates.
-                </Typography>
-              </Box>
-            }
-          />
-        </Container>
-      </Box>
+            {/* Responsive Cards in Grid */}
+            <Box sx={{ padding: 2 }}>
+              <Typography
+                variant="h4"
+                sx={{
+                  fontWeight: 900,
+                  textAlign: "center",
+                  marginBottom: 9,
+                  color: theme.palette.secondary.main,
+                  fontStyle: "capitalized",
+                }}
+              >
+                Course Categories
+              </Typography>
+
+              <Grid
+                container
+                spacing={3}
+                mb={10}
+                sx={{
+                  justifyContent:
+                    trainingData.length % 3 === 1 ||
+                    trainingData.length % 3 === 2
+                      ? "center"
+                      : "flex-start",
+                }}
+              >
+                {trainingData.map(
+                  ({ icon, title: t_text, description: d_text }, index) => (
+                    <Grid
+                      item
+                      xs={12} // Full width on extra small screens
+                      sm={6} // 2 cards per row on small screens
+                      md={4} // 3 cards per row on medium screens
+                      key={index}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center", // Center the cards horizontally
+                      }}
+                    >
+                      <ResponsiveCard
+                        image={icon}
+                        title={t_text}
+                        description={d_text}
+                      />
+                    </Grid>
+                  )
+                )}
+              </Grid>
+            </Box>
+
+            {/* Certification */}
+            <Banner
+              image={cb}
+              contentDiv={
+                <Box sx={{ paddingBottom: 4 }}>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontWeight: 900,
+                      color: "#0047AE",
+                      fontSize: { xs: "1.5rem", sm: "2rem" },
+                      marginBottom: 3,
+                      textAlign: "center",
+                    }}
+                  >
+                    CERTIFICATION
+                  </Typography>
+
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: theme.palette.text.primary,
+                      fontWeight: 700,
+                      fontSize: { xs: "1rem", sm: "1.1rem" },
+                      lineHeight: 1.6,
+                      textAlign: "center",
+                      maxWidth: { xs: "100%", sm: "80%" },
+                      marginX: "auto",
+                    }}
+                  >
+                    Participants receive industry-recognized certifications upon
+                    successful completion of their training, including
+                    DGCA-certified Remote Pilot Certificates.
+                  </Typography>
+                </Box>
+              }
+            />
+          </Container>
+        </Box>
+      </Container>
       <Footer />
     </Box>
   );
