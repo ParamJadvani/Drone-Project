@@ -27,3 +27,9 @@
     font-size: 1.03rem !important;
   }
 }
+
+@media (min-width: 769px) and (max-width: 899px) {
+  .description-text {
+    font-size: 1.18rem !important;
+  }
+}

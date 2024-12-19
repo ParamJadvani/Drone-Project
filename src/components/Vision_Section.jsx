@@ -59,7 +59,7 @@ const VisionSection = ({
             display: "flex",
             justifyContent: {
               lg: reverse ? "right" : "left",
-              xs:"center"
+              xs: "center",
             },
             alignItems: "center",
           }}
@@ -80,7 +80,7 @@ const VisionSection = ({
         <Box
           sx={{
             position: "relative",
-            width: { xs: "100%", lg: "50%" },
+            width: { xs: "100%",sm:"80%", md: "60%", lg: "50%" },
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
