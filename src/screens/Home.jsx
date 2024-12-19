@@ -18,6 +18,7 @@ import TestimonialCard from "../components/TestimonialCard";
 import onrev from "../assets/SectionImage/Online Review-rafiki.png";
 import OMV from "../assets/SectionImage/Business Plan-bro.png";
 import jadu from "../assets/Vector.png";
+import jadu2 from "../assets/Vector2.png";
 import bannerimage from "../assets/BannerImage/Home.png";
 import vsrp from "../assets/SectionImage/Vision statement-rafiki.png";
 import drone_delivery from "../assets/CardImage/drone-delivery.png";
@@ -165,7 +166,7 @@ const Home = () => {
         <Vision_Section
           title="Our Vision"
           vectorImage={vsrp}
-          backgroundimage={jadu}
+          backgroundimage={jadu2}
           description="Vymanika Aerospace envisions a future where unmanned aerial vehicles seamlessly enhance industries and daily life. We aim to lead in UAV innovation, setting new standards and unlocking transformative possibilities in aerospace technology. Our goal is to create a more efficient, connected world through advanced unmanned aviation solutions."
           reverse={true}
         />

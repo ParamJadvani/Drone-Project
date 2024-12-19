@@ -1,12 +1,18 @@
-@media (max-width: 419px) {
+@media (max-width: 358px) {
   .description-text {
-    font-size: 0.62rem !important; /* Font size for screens between 0px and 419px */
+    font-size: 0.58rem !important; /* Font size for screens between 0px and 419px */
+  }
+}
+
+@media (min-width: 358px) and (max-width: 420px) {
+  .description-text {
+    font-size: 0.66rem !important; /* Font size for screens between 420px and 479px */
   }
 }
 
 @media (min-width: 420px) and (max-width: 479px) {
   .description-text {
-    font-size: 0.80rem !important; /* Font size for screens between 420px and 479px */
+    font-size: 0.76rem !important; /* Font size for screens between 420px and 479px */
   }
 }
 

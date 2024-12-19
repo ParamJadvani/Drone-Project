@@ -10,6 +10,7 @@ import pob from "../assets/SectionImage/Progress overview-bro.png";
 import Banner from "../components/Banner";
 import scb from "../assets/SectionImage/Stamp collecting-bro.png";
 import Footer from "../components/Footer/Footer";
+import jadu2 from "../assets/Vector2.png";
 
 const AboutUS = () => {
   // Using useTheme to access the theme
@@ -111,7 +112,7 @@ const AboutUS = () => {
           <Vision_Section
             title="OUR FUTURE"
             vectorImage={vsr}
-            backgroundimage={jadu}
+            backgroundimage={jadu2}
             description="Vymanika Aerospace envisions a future where unmanned aerial vehicles seamlessly enhance industries and daily life. We aim to lead in UAV innovation, setting new standards and unlocking transformative possibilities in aerospace technology. Our goal is to create a more efficient, connected world through advanced unmanned aviation solutions."
             reverse
           />
